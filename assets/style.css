@@ -62,3 +62,17 @@ code, pre {
     background: #f0f0f0;
     color: #444;
 }
+
+.flex-container {
+    display: flex;
+    height: 100vh;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.flex-footer {
+    display: block;
+    
+}

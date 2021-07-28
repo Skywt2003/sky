@@ -13,12 +13,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title><?php $this->archiveTitle(array(
-            'category'  =>  _t('分类 %s 下的文章'),
-            'search'    =>  _t('包含关键字 %s 的文章'),
-            'tag'       =>  _t('标签 %s 下的文章'),
-            'author'    =>  _t('%s 发布的文章')
-        ), '', ' - '); ?><?php $this->options->title(); ?></title>
+    <title><?php $this->options->title(); ?></title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet">
@@ -45,9 +40,9 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
     <script src="<?php $this->options->themeUrl('/assets/js/argon-design-system.min.js');?>"></script>
     
     <!-- Highlight.js via jsDelivr -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.1.0/build/styles/default.min.css">
+    <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.1.0/build/styles/default.min.css">
     <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.1.0/build/highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
+    <script>hljs.highlightAll();</script> -->
 
     <?php $this->header(); ?>
 </head>
@@ -56,9 +51,9 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 <![endif]-->
 <body>
 
-<div class="text-center cover-container d-flex h-100 p-3 mx-auto flex-column">
+<div class="flex-container">
 
-<header id="header" class="inner cover clearfix mt-5 mb-4">
+<header id="header" class="clearfix mb-4">
     <div class="container">
         <div class="row">
             <div class="site-name col">
@@ -77,18 +72,17 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
     </div>
 </header><!-- end #header -->
 
-<?php $randColor = array_rand(array("primary"=>0,"info"=>0,"success"=>0,"danger"=>0,"warning"=>0)); ?>
-<nav class="inner cover navbar navbar-light navbar-expand sticky-top shadowb">
+<nav class="navbar navbar-light navbar-expand sticky-top">
     <div class="container">
         <ul class="col navbar-nav justify-content-center">
             <li class="nav-item">
-                <a class="nav-link nav-link-icon <?php if ($this->is('index')){echo 'text-'.$randColor;}else{echo 'text-gray';}?>" href="<?php $this->options->siteUrl();?>">
+                <a class="nav-link nav-link-icon text-grey" href="<?php $this->options->siteUrl();?>">
                     <i class="czs-home"></i> Home
                 </a>
             </li>
             <?php if (strpos($this->options->frontPage, 'file') !== FALSE) {?>
             <li class="nav-item">
-                <a class="nav-link nav-link-icon <?php if ($this->is('archives')){echo 'text-'.$randColor;}else{echo 'text-gray';}?>" href="<?php echo '.'.$this->options->routingTable['archive']['url'] ?>">
+                <a class="nav-link nav-link-icon text-grey" href="<?php echo '.'.$this->options->routingTable['archive']['url'] ?>">
                     <i class="czs-read"></i> Passages
                 </a>
             </li>
@@ -96,7 +90,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
             <?php $this->widget('Widget_Contents_Page_List')->to($pagelist);
                 while ($pagelist->next()): ?>
             <li class="nav-item">
-                <a class="nav-link nav-link-icon <?php if ($this->is('page', $pagelist->slug)){echo 'text-'.$randColor;}else{echo 'text-gray';}?>" href="<?php echo $pagelist->permalink ?>">
+                <a class="nav-link nav-link-icon text-grey" href="<?php echo $pagelist->permalink ?>">
                     <?php if ($pagelist->fields->pageIcon != '') {?>
                     <i class="<?php echo $pagelist->fields->pageIcon ?>"></i>
                     <?php } ?>
@@ -110,7 +104,28 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 </div>
 
-<div id="body">
+<footer class="flex-footer" id="footer" role="footer">
     <div class="container">
-        <div class="row">
-<?php $this->need('footer.php'); ?>
+        <div class="text-center">
+            <p>
+                <?php if ($this->options->nisInfo != "") {?>
+                <a id="nis" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=<?php echo mb_substr($this->options->nisInfo, 5, 14) ?>" target="_blank">
+                    <?php echo $this->options->nisInfo ?>
+                </a> | <?php } ?>
+                <?php if ($this->options->icpInfo != "") {?>
+                <a href="https://beian.miit.gov.cn/" target="_blank"><?php echo $this->options->icpInfo ?></a> | <?php } ?>
+                <a href="<?php $this->options->siteUrl();?>sitemap.xml">Sitemap</a> |
+                <a href="<?php $this->options->siteUrl();?>links">Links</a>
+            </p>
+            <p>&copy; <?php echo date('Y');?> <?php $this->options->title(); ?> ♥ <?php Typecho_Widget::widget('Widget_Stat')->to($stat); ?><?php $stat->publishedPostsNum() ?> Posts <?php $this->allOfCharacters();?> Words crafted</p>
+            <p>Powered by <a href="https://www.typecho.org">Typecho</a> | Theme <a href="https://skywt.cn/sky-theme">Sky</a> by <a href="https://skywt.cn/">SkyWT</a></p>
+        </div>
+    </div>
+</footer><!-- end #footer -->
+
+<!--<pre><?php #print_r($this); ?></pre>-->
+
+<?php $this->footer(); ?>
+
+</body>
+</html>
