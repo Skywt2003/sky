@@ -12,6 +12,9 @@ function themeConfig($form) {
 
     $nisInfo = new Typecho_Widget_Helper_Form_Element_Text('nisInfo', NULL, NULL, _t('网安备案号'), _t('显示在底部，留空则不显示'));
     $form->addInput($nisInfo->addRule('xssCheck', _t('请不要使用特殊字符')));
+
+    $notification = new Typecho_Widget_Helper_Form_Element_Text('notification', NULL, NULL, _t('网站公告'), _t('显示在首页，留空则不显示'));
+    $form->addInput($notification);
     
     $travelling = new Typecho_Widget_Helper_Form_Element_Radio('travelling',
         array('able' => _t('启用'),

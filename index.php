@@ -13,15 +13,20 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 ?>
 
 <div class="col mt-5" id="main" role="main">
-    <div class="alert alert-primary alert-dismissible fade show" role="alert">
-        Hi! 这是一个正在开发中的网站。原网站：<a class="text-secondary" href="https://skywt.cn/">skywt.cn</a>
+    <?php if ($this->options->notification !='') { ?>
+    <div class="alert alert-primary alert-dismissible fade show shadow" role="alert">
+        <?php $this->options->notification(); ?>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
+    <?php } ?>
     
 	<?php while($this->next()): ?>
     <article class="mt-5 mb-5" itemscope itemtype="http://schema.org/BlogPosting">
+        <?php if ($this->fields->headPic !='') { ?>
+            <img src=<?php $this->fields->headPic(); ?> class="img-fluid mx-auto d-block shadow rounded mb-3" alt="<?php $this->title(); ?>">
+        <?php } ?>
 		<h1 class="font-weight-bold post-title" itemprop="name headline">
 		    <a itemprop="url" href="<?php $this->permalink() ?>"><?php $this->title() ?></a>
 		</h1>
@@ -38,6 +43,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
     		<?php $this->content('More...'); ?>
         </div>
     </article>
+    <hr>
 	<?php endwhile; ?>
 
     <!-- 210720 pageNav 的实现方式，有待改进 -->

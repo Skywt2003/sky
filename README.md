@@ -1,8 +1,8 @@
 # Sky
 
-敬我们对生活的热爱。
+> 敬我们对生活的热爱。
 
-简约·多彩·响应式 Typecho 主题。基于 Argon 框架。
+Sky 是一个简洁的 Typecho 主题，基于 Argon 框架。
 
 demo：[skywt.cn](https://skywt.cn/)
 
