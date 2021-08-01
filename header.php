@@ -49,6 +49,7 @@
 <![endif]-->
 <body>
 
+<?php if (!($this->is('post') or $this->is('page'))) { ?>
 <header id="header" class="clearfix mt-5 mb-4">
     <div class="container">
         <div class="row">
@@ -74,20 +75,20 @@
         </div><!-- end .row -->
     </div>
 </header><!-- end #header -->
+<?php } ?>
 
 <!-- 如果 nav 放在 header 里，这个 sticky-top 就会被限制在 header 里，暂时只能这么写 -->
-<?php $randColor = array_rand(array("primary"=>0,"info"=>0,"success"=>0,"danger"=>0,"warning"=>0)); ?>
 <nav class="navbar navbar-light navbar-expand sticky-top shadowb">
     <div class="container">
         <ul class="col navbar-nav justify-content-center">
             <li class="nav-item">
-                <a class="nav-link nav-link-icon <?php if ($this->is('index')){echo 'text-'.$randColor;}else{echo 'text-gray';}?>" href="<?php $this->options->siteUrl();?>">
+                <a class="nav-link nav-link-icon <?php if ($this->is('index')){echo 'text-default';}else{echo 'text-gray';}?>" href="<?php $this->options->siteUrl();?>">
                     <i class="czs-home"></i> Home
                 </a>
             </li>
             <?php if (strpos($this->options->frontPage, 'file') !== FALSE) {?>
             <li class="nav-item">
-                <a class="nav-link nav-link-icon <?php if ($this->is('archives')){echo 'text-'.$randColor;}else{echo 'text-gray';}?>" href="<?php echo '.'.$this->options->routingTable['archive']['url'] ?>">
+                <a class="nav-link nav-link-icon <?php if ($this->is('archive')){echo 'text-default';}else{echo 'text-gray';}?>" href="<?php echo '.'.$this->options->routingTable['archive']['url'] ?>">
                     <i class="czs-read"></i> Passages
                 </a>
             </li>
@@ -95,7 +96,7 @@
             <?php $this->widget('Widget_Contents_Page_List')->to($pagelist);
                 while ($pagelist->next()): ?>
             <li class="nav-item">
-                <a class="nav-link nav-link-icon <?php if ($this->is('page', $pagelist->slug)){echo 'text-'.$randColor;}else{echo 'text-gray';}?>" href="<?php echo $pagelist->permalink ?>">
+                <a class="nav-link nav-link-icon <?php if ($this->is('page', $pagelist->slug)){echo 'text-default';}else{echo 'text-gray';}?>" href="<?php echo $pagelist->permalink ?>">
                     <?php if ($pagelist->fields->pageIcon != '') {?>
                     <i class="<?php echo $pagelist->fields->pageIcon ?>"></i>
                     <?php } ?>
