@@ -23,7 +23,7 @@
                 <a href="<?php $this->options->siteUrl();?>sitemap.xml">Sitemap</a> |
                 <a href="<?php $this->options->siteUrl();?>links">Links</a>
             </p>
-            <p>&copy; <?php echo date('Y');?> <?php $this->options->title(); ?> ♥ <?php Typecho_Widget::widget('Widget_Stat')->to($stat); ?><?php $stat->publishedPostsNum() ?> Posts <?php $this->allOfCharacters();?> Words crafted</p>
+            <p>&copy; <?php echo date('Y');?> <?php $this->options->title(); ?> ♥ <?php Typecho_Widget::widget('Widget_Stat')->to($stat); ?><?php $stat->publishedPostsNum() ?> Posts <?php allOfCharacters();?> Words crafted</p>
             <p>Powered by <a href="https://www.typecho.org">Typecho</a> | Theme <a href="https://skywt.cn/sky-theme">Sky</a> by <a href="https://skywt.cn/">SkyWT</a></p>
         </div>
     </div>

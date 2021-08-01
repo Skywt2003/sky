@@ -12,7 +12,7 @@ $this->need('header.php');
     <article>
         <h1 class="font-weight-bold post-title">文章归档</h1>
         <p class="meta">
-            共有 <?php Typecho_Widget::widget('Widget_Stat')->to($stat);?><?php $stat->publishedPostsNum() ?> 篇文章，<?php $this->allOfCharacters();?> 文字
+            共有 <?php Typecho_Widget::widget('Widget_Stat')->to($stat);?><?php $stat->publishedPostsNum() ?> 篇文章，<?php echo allOfCharacters();?> 文字
         </p>
         <?php
             $this->widget('Widget_Contents_Post_Recent', 'pageSize=10000')->to($archives);

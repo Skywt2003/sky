@@ -52,7 +52,7 @@ function allOfCharacters() {
         $unit = 'K';
     }
 
-    $out = sprintf('%.2lf %s',$chars, $unit);
+    $out = sprintf('%.2lf%s',$chars, $unit);
 
     echo $out;
 }
