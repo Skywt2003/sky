@@ -82,7 +82,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
             </li>
             <?php if (strpos($this->options->frontPage, 'file') !== FALSE) {?>
             <li class="nav-item">
-                <a class="nav-link nav-link-icon text-grey" href="<?php echo '.'.$this->options->routingTable['archive']['url'] ?>">
+                <a class="nav-link nav-link-icon text-grey" href="<?php echo $this->options->siteUrl.$this->options->routingTable['archive']['url'] ?>">
                     <i class="czs-read"></i> Passages
                 </a>
             </li>
