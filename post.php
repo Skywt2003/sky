@@ -11,16 +11,17 @@
             <li><?php _e('时间: '); ?><time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date(); ?></time></li>
             <li><?php _e('分类: '); ?><?php $this->category(','); ?></li>
         </ul>
+        <hr>
         <div class="post-content" itemprop="articleBody">
             <?php $this->content(); ?>
         </div>
         <!--<p itemprop="keywords" class="post-tags"><?php _e('标签: '); ?><?php $this->tags(', ', true, 'none'); ?></p>-->
     </article>
-    <ul class="post-near">
-        <li>上一篇: <?php $this->thePrev('%s','没有了'); ?></li>
-        <li>下一篇: <?php $this->theNext('%s','没有了'); ?></li>
-    </ul>
-
+    <!-- 暂时找不到好的办法让这个很好地兼容 Bootstrap 的写法 -->
+    <!-- <ul class="post-near">
+        <li>上一篇: <?php #$this->thePrev('%s','没有了'); ?></li>
+        <li>下一篇: <?php #$this->theNext('%s','没有了'); ?></li>
+    </ul> -->
     <?php $this->need('comments.php'); ?>
 </div><!-- end #main-->
 

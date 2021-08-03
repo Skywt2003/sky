@@ -6,12 +6,15 @@
 
 <script>
     $(document).ready(function(){
-        $("article .post-content img").addClass("img-fluid mx-auto d-block shadow");
+        $("article .post-content img").addClass("img-fluid mx-auto d-block shadow rounded");
+        $("article blockquote").addClass("shadow rounded");
+        $("article pre").addClass("shadow rounded");
+        $("table").addClass("table");
     });
 </script>
-
 <footer class="mt-5 mb-5" id="footer" role="footer">
     <div class="container">
+        <hr>
         <div class="text-center">
             <p>
                 <?php if ($this->options->nisInfo != "") {?>

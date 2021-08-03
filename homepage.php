@@ -106,6 +106,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 <footer class="flex-footer" id="footer" role="footer">
     <div class="container">
+        <hr>
         <div class="text-center">
             <p>
                 <?php if ($this->options->nisInfo != "") {?>
