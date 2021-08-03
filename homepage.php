@@ -76,13 +76,13 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
     <div class="container">
         <ul class="col navbar-nav justify-content-center">
             <li class="nav-item">
-                <a class="nav-link nav-link-icon text-grey" href="<?php $this->options->siteUrl();?>">
+                <a class="nav-link nav-link-icon text-gray" href="<?php $this->options->siteUrl();?>">
                     <i class="czs-home"></i> Home
                 </a>
             </li>
             <?php if (strpos($this->options->frontPage, 'file') !== FALSE) {?>
             <li class="nav-item">
-                <a class="nav-link nav-link-icon text-grey" href="<?php echo $this->options->siteUrl.$this->options->routingTable['archive']['url'] ?>">
+                <a class="nav-link nav-link-icon text-gray" href="<?php echo $this->options->siteUrl.$this->options->routingTable['archive']['url'] ?>">
                     <i class="czs-read"></i> Passages
                 </a>
             </li>
@@ -90,7 +90,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
             <?php $this->widget('Widget_Contents_Page_List')->to($pagelist);
                 while ($pagelist->next()): ?>
             <li class="nav-item">
-                <a class="nav-link nav-link-icon text-grey" href="<?php echo $pagelist->permalink ?>">
+                <a class="nav-link nav-link-icon text-gray" href="<?php echo $pagelist->permalink ?>">
                     <?php if ($pagelist->fields->pageIcon != '') {?>
                     <i class="<?php echo $pagelist->fields->pageIcon ?>"></i>
                     <?php } ?>
