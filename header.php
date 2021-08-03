@@ -17,10 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet">
 
     <!-- FontAwesome Icons -->
-    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-
-    <!-- 草莓图标库 -->
-    <link rel="stylesheet" href="<?php $this->options->themeUrl('/assets/strawberry-v2.0.0/style.css'); ?>">
+    <link href="https://cdn.staticfile.org/font-awesome/5.15.3/css/all.css" rel="stylesheet">
     
     <!-- Argon Theme CSS -->
     <link type="text/css" href="<?php $this->options->themeUrl('/assets/css/argon-design-system.min.css')?>" rel="stylesheet">
@@ -83,13 +80,13 @@
         <ul class="col navbar-nav justify-content-center">
             <li class="nav-item">
                 <a class="nav-link nav-link-icon <?php if ($this->is('index')){echo 'text-default';}else{echo 'text-gray';}?>" href="<?php $this->options->siteUrl();?>">
-                    <i class="czs-home"></i> Home
+                    <i class="fa fa-home"></i> Home
                 </a>
             </li>
             <?php if (strpos($this->options->frontPage, 'file') !== FALSE) {?>
             <li class="nav-item">
                 <a class="nav-link nav-link-icon <?php if ($this->is('archive')){echo 'text-default';}else{echo 'text-gray';}?>" href="<?php echo $this->options->siteUrl.$this->options->routingTable['archive']['url'] ?>">
-                    <i class="czs-read"></i> Passages
+                    <i class="fa fa-book"></i> Passages
                 </a>
             </li>
             <?php } ?>
@@ -98,7 +95,7 @@
             <li class="nav-item">
                 <a class="nav-link nav-link-icon <?php if ($this->is('page', $pagelist->slug)){echo 'text-default';}else{echo 'text-gray';}?>" href="<?php echo $pagelist->permalink ?>">
                     <?php if ($pagelist->fields->pageIcon != '') {?>
-                    <i class="<?php echo $pagelist->fields->pageIcon ?>"></i>
+                    <i class="fa fa-<?php echo $pagelist->fields->pageIcon ?>"></i>
                     <?php } ?>
                 <?php echo $pagelist->title ?>
                 </a>
