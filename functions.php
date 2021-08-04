@@ -17,20 +17,13 @@ function themeConfig($form) {
 
     $notification = new Typecho_Widget_Helper_Form_Element_Text('notification', NULL, NULL, _t('网站公告'), _t('显示在首页，留空则不显示'));
     $form->addInput($notification);
-    
-    $travelling = new Typecho_Widget_Helper_Form_Element_Radio('travelling',
-        array('able' => _t('启用'),
-            'disable' => _t('禁止'),
-        ),
-        'disable', _t('是否开启 Travelling 友链接力'), _t('默认禁止，启用则显示 travelling，可见 https://github.com/volfclub/travellings'));
-    $form->addInput($travelling);
 }
 
 function themeFields($layout) {
     $headPic = new Typecho_Widget_Helper_Form_Element_Text('headPic', NULL, NULL, _t('文章头图地址'), _t('在这里填入一个图片 URL 地址, 就可以让文章加上头图。'));
     $layout->addItem($headPic);
     
-    $pageIcon = new Typecho_Widget_Helper_Form_Element_Text('pageIcon', NULL, NULL, _t('页面 icon'), _t('在这里为页面填入一个 fontawesome icon 代码，在菜单栏链接前会显示 icon。'));
+    $pageIcon = new Typecho_Widget_Helper_Form_Element_Text('pageIcon', NULL, NULL, _t('页面 icon'), _t('在这里为页面填入一个 fontawesome icon 代码，在菜单栏链接前会显示 icon。为页面填入一个 fontawesome icon 代码，在菜单栏链接前会显示 icon。对文章无效。Fontawesome 是 5.15 版本，参见：https://fontawesome.com/v5.15/icons'));
     $layout->addItem($pageIcon);
 
     $linkTo = new Typecho_Widget_Helper_Form_Element_Text('linkTo', NULL, NULL, _t('重定向至'), _t('在这里输入一个 URL，打开页面时会自动重定向到这个 URL，用于定制菜单栏。对文章无效'));

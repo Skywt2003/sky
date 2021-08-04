@@ -88,7 +88,7 @@ $this->need('functions.php'); // 不知道为啥，似乎模版页面不会自�
                 <li class="nav-item">
                     <a class="nav-link nav-link-icon text-gray" href="<?php echo $pagelist->permalink ?>">
                         <?php if ($pagelist->fields->pageIcon != '') {?>
-                        <i class="fa fa-<?php echo $pagelist->fields->pageIcon ?>"></i>
+                        <i class="<?php echo $pagelist->fields->pageIcon ?>"></i>
                         <?php } ?>
                     <?php echo $pagelist->title ?>
                     </a>

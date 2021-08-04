@@ -96,7 +96,7 @@
             <li class="nav-item">
                 <a class="nav-link nav-link-icon <?php if ($this->is('page', $pagelist->slug)){echo 'text-default';}else{echo 'text-gray';}?>" href="<?php echo $pagelist->permalink ?>">
                     <?php if ($pagelist->fields->pageIcon != '') {?>
-                    <i class="fa fa-<?php echo $pagelist->fields->pageIcon ?>"></i>
+                    <i class="<?php echo $pagelist->fields->pageIcon ?>"></i>
                     <?php } ?>
                 <?php echo $pagelist->title ?>
                 </a>
