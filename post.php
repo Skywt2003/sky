@@ -5,14 +5,18 @@
     <article itemscope itemtype="http://schema.org/BlogPosting">
         <h1 class="font-weight-bold post-title" itemprop="name headline"><?php $this->title() ?></h1>
         <div>
-            <i class="far fa-calendar-alt"></i> <time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date('Y-m-d D h:i a'); ?></time>
+            <span class="text-gray">
+                <i class="far fa-calendar-alt"></i>
+                <time class="lately-a" datetime="<?php $this->date('c'); ?>" itemprop="datePublished" pubdate>Lately</time> | 
+                <time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date('Y-m-d D h:iA'); ?></time>
+            </span>
             <?php if ($this->user->hasLogin()): ?>
                 <a class="badge badge-primary" href="<?php $this->options->siteUrl();?>admin/write-post.php?cid=<?php $this->cid();?>">
                     <i class="far fa-edit"></i>
                     <?php _e('编辑'); ?>
                 </a>
             <?php endif;?>
-            </div>
+        </div>
         <hr>
         <div class="post-content" itemprop="articleBody">
             <?php $this->content(); ?>

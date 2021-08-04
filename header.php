@@ -31,6 +31,9 @@
     <script src="<?php $this->options->themeUrl('/assets/js/core/popper.min.js');?>"></script>
     <script src="<?php $this->options->themeUrl('/assets/js/core/bootstrap.min.js');?>"></script>
 
+    <!-- lately JS -->
+    <script src="https://tokinx.github.io/lately/lately.min.js"></script>
+
     <!-- Argon Theme JS -->
     <script src="<?php $this->options->themeUrl('/assets/js/argon-design-system.min.js');?>"></script>
     

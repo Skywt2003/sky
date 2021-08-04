@@ -11,6 +11,7 @@
         $("article pre").addClass("shadow rounded");
         $("table").addClass("table");
     });
+    Lately({'target' : '.lately-a, .lately-b, .lately-c'});
 </script>
 <footer class="mt-5 mb-5" id="footer" role="footer">
     <div class="container">

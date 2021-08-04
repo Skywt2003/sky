@@ -27,18 +27,14 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
         <?php if ($this->fields->headPic !='') { ?>
             <img src=<?php $this->fields->headPic(); ?> class="img-fluid mx-auto d-block shadow rounded mb-3" alt="<?php $this->title(); ?>">
         <?php } ?>
-		<h1 class="font-weight-bold post-title" itemprop="name headline">
-		    <a itemprop="url" href="<?php $this->permalink() ?>"><?php $this->title() ?></a>
-		</h1>
-		<!--<div class="post-meta" role="meta">-->
-		<!--	<span class="nav-item"><i class="czs-calendar"></i><time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date(); ?></time></span>-->
-		<!--	<?php if (count($this->tags) > 0) { ?>-->
-  <!--          <span class="nav-item"><i class="czs-tag"></i><?php $this->tags(",",true,'aa'); ?></span>-->
-  <!--          <?php } ?>-->
-  <!--          <?php if ($this->commentsNum > 0) {?>-->
-  <!--          <span class="nav-item"><i class="czs-comment"></i><a href="<?php $this->permalink() ?>#comments"><?php $this->commentsNum('0 评', '1 评', '%d 评');?></a></span>-->
-  <!--          <?php } ?>-->
-  <!--      </div>-->
+        <div>
+            <h1 class="font-weight-bold post-title" itemprop="name headline">
+                <a itemprop="url" href="<?php $this->permalink() ?>"><?php $this->title() ?></a>
+		    </h1>
+            <!-- <p class="text-gray">
+                <time class="lately-a" datetime="<?php $this->date('c'); ?>" itemprop="datePublished" pubdate>Lately</time>
+            </p> -->
+        </div>
         <div class="summary post-content" itemprop="articleBody">
     		<?php $this->content('More...'); ?>
         </div>
