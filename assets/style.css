@@ -29,9 +29,6 @@
  article, article a {
     color: #172b4d;
 }
-.post-title:before {
-    content:'#';
-}
 article{
     font-size: 1rem;
     font-weight: 300;
