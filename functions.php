@@ -27,11 +27,14 @@ function themeConfig($form) {
 }
 
 function themeFields($layout) {
-    $headPic = new Typecho_Widget_Helper_Form_Element_Text('headPic', NULL, NULL, _t('文章头图地址'), _t('在这里填入一个图片 URL 地址, 就可以让文章加上头图'));
+    $headPic = new Typecho_Widget_Helper_Form_Element_Text('headPic', NULL, NULL, _t('文章头图地址'), _t('在这里填入一个图片 URL 地址, 就可以让文章加上头图。'));
     $layout->addItem($headPic);
     
-    $pageIcon = new Typecho_Widget_Helper_Form_Element_Text('pageIcon', NULL, NULL, _t('页面 icon'), _t('在这里为页面填入一个 icon 代码，在菜单栏链接前会显示 icon'));
+    $pageIcon = new Typecho_Widget_Helper_Form_Element_Text('pageIcon', NULL, NULL, _t('页面 icon'), _t('在这里为页面填入一个 fontawesome icon 代码，在菜单栏链接前会显示 icon。'));
     $layout->addItem($pageIcon);
+
+    $linkTo = new Typecho_Widget_Helper_Form_Element_Text('linkTo', NULL, NULL, _t('重定向至'), _t('在这里输入一个 URL，打开页面时会自动重定向到这个 URL，用于定制菜单栏。对文章无效'));
+    $layout->addItem($linkTo);
 }
 
 
