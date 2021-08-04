@@ -5,6 +5,7 @@
  * @package index
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+$this->need('functions.php'); // 不知道为啥，似乎模版页面不会自动引用 functions.php
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -49,59 +50,57 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 <body>
 
 <div class="flex-container">
-
-<header id="header" class="clearfix mb-4">
-    <div class="container">
-        <div class="row">
-            <div class="site-name col">
-            <?php if ($this->options->logoUrl): ?>
-                <div class="text-center">
-                    <img src="<?php $this->options->logoUrl() ?>" class="site-avatar shadow rounded-circle mx-auto d-block" alt="<?php $this->options->title() ?>" width=128 height=128>
-                    <h2 class="mt-3 font-weight-bold text-default"><?php $this->options->title() ?></h2>
-                    <p class="description"><?php $this->options->description() ?></p>
+    <header id="header" class="clearfix mb-4">
+        <div class="container">
+            <div class="row">
+                <div class="site-name col">
+                <?php if ($this->options->logoUrl): ?>
+                    <div class="text-center">
+                        <img src="<?php $this->options->logoUrl() ?>" class="site-avatar shadow rounded-circle mx-auto d-block" alt="<?php $this->options->title() ?>" width=128 height=128>
+                        <h2 class="mt-3 font-weight-bold text-default"><?php $this->options->title() ?></h2>
+                        <p class="description"><?php $this->options->description() ?></p>
+                    </div>
+                <?php else: ?>
+                    <a id="logo" href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title() ?></a>
+            	    <p class="description text-gray"><?php $this->options->description() ?></p>
+                <?php endif; ?>
                 </div>
-            <?php else: ?>
-                <a id="logo" href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title() ?></a>
-        	    <p class="description text-gray"><?php $this->options->description() ?></p>
-            <?php endif; ?>
-            </div>
-        </div><!-- end .row -->
-    </div>
-</header><!-- end #header -->
-
-<nav class="navbar navbar-light navbar-expand sticky-top">
-    <div class="container">
-        <ul class="col navbar-nav justify-content-center">
-            <li class="nav-item">
-                <a class="nav-link nav-link-icon text-gray" href="<?php $this->options->siteUrl();?>">
-                    <i class="fa fa-home"></i> Home
-                </a>
-            </li>
-            <?php if (strpos($this->options->frontPage, 'file') !== FALSE) {?>
-            <li class="nav-item">
-                <a class="nav-link nav-link-icon text-gray" href="<?php echo $this->options->siteUrl.$this->options->routingTable['archive']['url'] ?>">
-                    <i class="fa fa-book"></i> Passages
-                </a>
-            </li>
-            <?php } ?>
-            <?php $this->widget('Widget_Contents_Page_List')->to($pagelist);
-                while ($pagelist->next()): ?>
-            <li class="nav-item">
-                <a class="nav-link nav-link-icon text-gray" href="<?php echo $pagelist->permalink ?>">
-                    <?php if ($pagelist->fields->pageIcon != '') {?>
-                    <i class="fa fa-<?php echo $pagelist->fields->pageIcon ?>"></i>
-                    <?php } ?>
-                <?php echo $pagelist->title ?>
-                </a>
-            </li>
-            <?php endwhile;?>
-        </ul>
-    </div>
-</nav>
-
+            </div><!-- end .row -->
+        </div>
+    </header><!-- end #header -->
+    <nav class="navbar navbar-light navbar-expand sticky-top">
+        <div class="container">
+            <ul class="col navbar-nav justify-content-center pr-0">
+                <li class="nav-item">
+                    <a class="nav-link nav-link-icon text-gray" href="<?php $this->options->siteUrl();?>">
+                        <i class="fa fa-home"></i> <?php _e('首页') ?>
+                    </a>
+                </li>
+                <?php if (strpos($this->options->frontPage, 'file') !== FALSE) {?>
+                <li class="nav-item">
+                    <a class="nav-link nav-link-icon text-gray" href="<?php echo $this->options->siteUrl.$this->options->routingTable['archive']['url'] ?>">
+                        <i class="fa fa-book"></i> <?php _e('文章') ?>
+                    </a>
+                </li>
+                <?php } ?>
+                <?php $this->widget('Widget_Contents_Page_List')->to($pagelist);
+                    while ($pagelist->next()): ?>
+                <li class="nav-item">
+                    <a class="nav-link nav-link-icon text-gray" href="<?php echo $pagelist->permalink ?>">
+                        <?php if ($pagelist->fields->pageIcon != '') {?>
+                        <i class="fa fa-<?php echo $pagelist->fields->pageIcon ?>"></i>
+                        <?php } ?>
+                    <?php echo $pagelist->title ?>
+                    </a>
+                </li>
+                <?php endwhile;?>
+            </ul>
+        </div>
+    </nav>
 </div>
+<script>$(document).ready(function(){$(".navbar ul.navbar-nav li:last-child").addClass("mr-0");});</script>
 
-<footer class="flex-footer" id="footer" role="footer">
+<footer class="mt-5 mb-5" id="footer" role="footer">
     <div class="container">
         <hr>
         <div class="text-center">
@@ -115,13 +114,11 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                 <a href="<?php $this->options->siteUrl();?>sitemap.xml">Sitemap</a> |
                 <a href="<?php $this->options->siteUrl();?>links">Links</a>
             </p>
-            <p>&copy; <?php echo date('Y');?> <?php $this->options->title(); ?> ♥ <?php Typecho_Widget::widget('Widget_Stat')->to($stat); ?><?php $stat->publishedPostsNum() ?> Posts <?php $this->allOfCharacters();?> Words crafted</p>
+            <p>&copy; <?php echo date('Y');?> <?php $this->options->title(); ?> ♥ <?php Typecho_Widget::widget('Widget_Stat')->to($stat); ?><?php $stat->publishedPostsNum() ?> Posts <?php allOfCharacters();?> Words crafted</p>
             <p>Powered by <a href="https://www.typecho.org">Typecho</a> | Theme <a href="https://skywt.cn/sky-theme">Sky</a> by <a href="https://skywt.cn/">SkyWT</a></p>
         </div>
     </div>
 </footer><!-- end #footer -->
-
-<!--<pre><?php #print_r($this); ?></pre>-->
 
 <?php $this->footer(); ?>
 
