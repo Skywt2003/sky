@@ -25,17 +25,12 @@
     font-weight: bold;
     line-height: 1.7;
 }
-/* Shadow Below 单边阴影，应用于 nav */
- .shadowb {
-    box-shadow: 0 20px 20px rgba(50, 50, 93, .1), 0 5px 5px rgba(0, 0, 0, .07);
-}
 /* post content style */
  article, article a {
     color: #172b4d;
 }
 .post-title:before {
     content:'#';
-    font-family: monospace;
 }
 article{
     font-size: 1rem;

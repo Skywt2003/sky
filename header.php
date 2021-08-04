@@ -46,7 +46,6 @@
 <![endif]-->
 <body>
 
-<?php if (!($this->is('post') or $this->is('page'))) { ?>
 <header id="header" class="clearfix mt-5 mb-4">
     <div class="container">
         <div class="row">
@@ -72,10 +71,9 @@
         </div><!-- end .row -->
     </div>
 </header><!-- end #header -->
-<?php } ?>
 
 <!-- 如果 nav 放在 header 里，这个 sticky-top 就会被限制在 header 里，暂时只能这么写 -->
-<nav class="navbar navbar-light navbar-expand sticky-top shadowb">
+<nav class="navbar navbar-light navbar-expand sticky-top">
     <div class="container">
         <ul class="col navbar-nav justify-content-center">
             <li class="nav-item">
