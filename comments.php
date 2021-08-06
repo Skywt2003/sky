@@ -9,17 +9,20 @@
 	<div id="<?php $comments->theId(); ?>" class="<?php echo $commentClass; ?>">
 	    <div class="d-flex align-items-center">
 	        <?php $comments->gravatar(64, '', '', 'avatar'); ?>
-            <div class="d-inline-block">
+            <div class="d-inline-block ml-1">
                 <span class="font-weight-900"><?php $comments->author(); ?></span>
                 <?php if ($comments->authorId == $comments->ownerId): ?>
-                    <span class="badge badge-secondary"><?php _e('博主') ?></span>
+                    <span class="badge badge-secondary ml-1 mr-1"><?php _e('博主') ?></span>
                 <?php endif; ?>
                 <?php if ($comments->status == 'waiting'): ?>
-                    <span class="badge badge-warning"><?php _e('等待审核') ?></span>
+                <span class="badge badge-warning ml-1 mr-1">
+                    <i class="fas fa-ellipsis-h"></i>
+                    <?php _e('等待审核') ?>
+                </span>
                 <?php endif; ?>
                 <br>
 	            <span class="small"><?php $comments->date('F jS, Y'); ?> at <?php $comments->date('h:i a'); ?></span>
-                <span class="small"><?php $comments->reply('Reply'); ?><span>
+                <span class="small ml-1 mr-1"><?php $comments->reply('<i class="fa fa-reply"></i> Reply'); ?><span>
             </div>
         </div>
         <p><?php $comments->content(); ?></p>
@@ -38,8 +41,8 @@
     <?php if ($this->allow('comment')): ?>
     <hr>
     <div id="<?php $this->respondId(); ?>" class="respond">
-        <div class="cancel-comment-reply">
-        <?php $comments->cancelReply(); ?>
+        <div>
+            <?php $comments->cancelReply('<i class="fa fa-window-close"></i> 取消回复'); ?>
         </div>
     	<h2 id="response"><?php _e('添加新评论'); ?></h2>
     	<form method="post" action="<?php $this->commentUrl(); ?>" id="comment-form" role="form">
@@ -65,7 +68,7 @@
                             <input type="checkbox" name="receiveMail" id="receiveMail" value="yes" checked />
                             <span class="custom-toggle-slider rounded-circle"></span>
                         </label>
-                        <label class="mb-0 ml-2"><?php _e('接收邮件通知'); ?></label>
+                        <label for="receiveMail" class="mb-0 ml-2"><?php _e('接收邮件通知'); ?></label>
                         </div>
                     </div>
                 </div>
