@@ -18,6 +18,19 @@
             <?php endif;?>
         </div>
         <hr>
+        <?php
+            $date1=date_create(date('c',$this->date->timeStamp));
+            $date2=date_create(date('c'));
+            $days=date_diff($date1,$date2);
+        ?>
+        <?php if ($this->options->oldPosts == 'able' && $days->format('%a') > 365): ?>
+        <div class="alert alert-primary shadow mb-5" role="alert">
+            这是一篇发布于 <?php echo $days->format('%a'); ?> 天以前的旧文。其中的部分内容可能已经过时。
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true" class="text-white">×</span>
+            </button>
+        </div>
+        <?php endif; ?>
         <div class="post-content" itemprop="articleBody">
             <?php $this->content(); ?>
         </div>

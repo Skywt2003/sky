@@ -17,6 +17,13 @@ function themeConfig($form) {
 
     $notification = new Typecho_Widget_Helper_Form_Element_Text('notification', NULL, NULL, _t('网站公告'), _t('显示在首页，留空则不显示'));
     $form->addInput($notification);
+
+    $oldPosts = new Typecho_Widget_Helper_Form_Element_Radio('oldPosts',
+        array('able' => _t('启用'),
+              'disable' => _t('禁用'),
+        ),
+        'disable', _t('是否显示旧文提示'), _t('启用则会在一年前发布的文章页面显示“这是一篇旧文”'));
+    $form->addInput($oldPosts);
 }
 
 function themeFields($layout) {
