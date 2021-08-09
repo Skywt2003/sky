@@ -75,9 +75,11 @@
     </div>
 </header><!-- end #header -->
 
-<!-- 如果 nav 放在 header 里，这个 sticky-top 就会被限制在 header 里，暂时只能这么写 -->
-<nav class="navbar navbar-light navbar-expand sticky-top">
-    <div class="container">
+<nav class="container navbar navbar-light navbar-expand-sm sticky-top">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="col navbar-nav justify-content-center pr-0">
             <li class="nav-item">
                 <a class="nav-link nav-link-icon <?php if ($this->is('index')){echo 'text-default';}else{echo 'text-gray';}?>" href="<?php $this->options->siteUrl();?>">
