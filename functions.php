@@ -18,6 +18,9 @@ function themeConfig($form) {
     $notification = new Typecho_Widget_Helper_Form_Element_Text('notification', NULL, NULL, _t('网站公告'), _t('显示在首页，留空则不显示'));
     $form->addInput($notification);
 
+    $bottomLinks = new Typecho_Widget_Helper_Form_Element_Text('bottomLinks', NULL, NULL, _t('底部链接'), _t('（需要配合<a href="http://www.imhan.com/archives/typecho-links/" target="_blank">友情链接插件</a>使用）网站底部的链接分类名称'));
+    $form->addInput($bottomLinks);
+
     $oldPosts = new Typecho_Widget_Helper_Form_Element_Radio('oldPosts',
         array('able' => _t('启用'),
               'disable' => _t('禁用'),
