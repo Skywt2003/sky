@@ -7,7 +7,7 @@
         <div>
             <span class="text-gray">
                 <i class="far fa-calendar-alt ml-1 mr-1"></i>
-                <time class="lately-a" datetime="<?php $this->date('c'); ?>" itemprop="datePublished" pubdate>Lately</time> | 
+                <time class="lately" datetime="<?php $this->date('c'); ?>" itemprop="datePublished" pubdate>Lately</time> | 
                 <time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date('Y-m-d D h:iA'); ?></time>
             </span>
             <?php if ($this->user->hasLogin()): ?>
