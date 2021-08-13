@@ -4,8 +4,8 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 define('__TYPECHO_GRAVATAR_PREFIX__', 'https://cdn.v2ex.com/gravatar/');
 
 function themeConfig($form) {
-    echo $siteUrl;
-    
+    echo '<h2>Sky 主题设置</h2>';
+
     $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', NULL, NULL, _t('站点 LOGO 地址'), _t('在这里填入一个图片 URL 地址, 以在网站标题前加上一个 LOGO'));
     $form->addInput($logoUrl);
     
@@ -27,6 +27,13 @@ function themeConfig($form) {
         ),
         'disable', _t('是否显示旧文提示'), _t('启用则会在一年前发布的文章页面显示“这是一篇旧文”'));
     $form->addInput($oldPosts);
+
+    $friendAvatar = new Typecho_Widget_Helper_Form_Element_Radio('friendAvatar',
+        array('icon' => _t('网站 icon'),
+              'img' => _t('自定义图片'),
+        ),
+        'icon', _t('友链页面的头像来源'), _t('前者自动使用对方网站 icon 作为头像，后者需要在 links 插件中自行设置图片作为头像'));
+    $form->addInput($friendAvatar);
 }
 
 function themeFields($layout) {
