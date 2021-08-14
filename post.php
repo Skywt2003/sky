@@ -3,6 +3,9 @@
 
 <div class="col mt-5" id="main" role="main">
     <article itemscope itemtype="http://schema.org/BlogPosting">
+        <?php if ($this->fields->headPic !=''): ?>
+            <img src=<?php $this->fields->headPic(); ?> class="img-fluid mx-auto d-block shadow rounded mb-3" alt="<?php $this->title(); ?>">
+        <?php endif; ?> 
         <h1 class="font-weight-bold post-title" itemprop="name headline"><?php $this->title() ?></h1>
         <div>
             <span class="text-gray">
