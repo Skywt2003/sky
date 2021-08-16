@@ -68,8 +68,11 @@ $this->need('functions.php'); // 不知道为啥，似乎模版页面不会自�
             </div><!-- end .row -->
         </div>
     </header><!-- end #header -->
-    <nav class="navbar navbar-light navbar-expand sticky-top">
-        <div class="container">
+    <nav class="container navbar navbar-light navbar-expand-sm">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="col navbar-nav justify-content-center pr-0">
                 <li class="nav-item">
                     <a class="nav-link nav-link-icon text-gray" href="<?php $this->options->siteUrl();?>">
