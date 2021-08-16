@@ -11,6 +11,18 @@ $this->need('header.php');
 <div class="col mt-5" id="main" role="main">
     <article>
         <h1 class="font-weight-bold post-title">文章归档</h1>
+        <form class="form-inline mb-3" id="search" method="post" action="<?php $this->options->siteUrl(); ?>" role="search">
+            <label class="sr-only" for="s">搜索文章</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="fa fa-search"></i>
+                    </span>
+                </div>
+                <input type="text" id="s" name="s" class="form-control" placeholder="输入关键字搜索" />
+            </div>
+            <button type="submit" class="form-control btn btn-default">搜索</button>
+        </form>
         <?php Typecho_Widget::widget('Widget_Stat')->to($stat);?><?php $stat->publishedPostsNum() ?> 篇文章，<?php echo allOfCharacters();?> 文字。
         <hr>
         <?php
