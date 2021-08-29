@@ -26,7 +26,7 @@
     line-height: 1.7;
 }
 /* post content style */
- article, article a {
+article, article .post-title a {
     color: #172b4d;
 }
 article{
@@ -49,12 +49,13 @@ blockquote:before {
     line-height: 0;
 }
 code, pre {
-    font-family: consolas, Courier, monospace, sans-serif;
-    font-size: .9em;
+    font-family: Consolas,Menlo,Monaco,Andale Mono WT,Andale Mono,Lucida Console,Lucida Sans Typewriter,DejaVu Sans Mono,Bitstream Vera Sans Mono,Liberation Mono,Nimbus Mono L,Courier New,Courier,monospace;
     background: #f0f0f0;
     color: #444;
 }
-
+code {
+    padding:.1em .5em;
+}
 .flex-container {
     display: flex;
     height: 100vh;
@@ -66,7 +67,6 @@ code, pre {
 
 .flex-footer {
     display: block;
-    
 }
 
 .friend {

@@ -23953,17 +23953,18 @@ pre[class*="language-"] {
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
-  background: #f5f7ff;
-  color: #5e6687;
+  /* background: #f5f7ff;
+  color: #5e6687; */
   border-radius: .25rem;
 }
+/* 虽然直接改这个 Argon 框架里面的东西不太好，但是实在找不到这个优先级问题的处理办法了 QwQ */
 
 pre[class*="language-"]::-moz-selection,
 pre[class*="language-"] ::-moz-selection,
 code[class*="language-"]::-moz-selection,
 code[class*="language-"] ::-moz-selection {
   text-shadow: none;
-  background: #dfe2f1;
+  /* background: #dfe2f1; */
 }
 
 pre[class*="language-"]::selection,
@@ -23971,7 +23972,7 @@ pre[class*="language-"] ::selection,
 code[class*="language-"]::selection,
 code[class*="language-"] ::selection {
   text-shadow: none;
-  background: #dfe2f1;
+  /* background: #dfe2f1; */
 }
 
 /* Code blocks */

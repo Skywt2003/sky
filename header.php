@@ -20,7 +20,7 @@
     <link href="https://cdn.staticfile.org/font-awesome/5.15.3/css/all.css" rel="stylesheet">
     
     <!-- Argon Theme CSS -->
-    <link type="text/css" href="<?php $this->options->themeUrl('/assets/css/argon-design-system.min.css')?>" rel="stylesheet">
+    <link type="text/css" href="<?php $this->options->themeUrl('/assets/css/argon-design-system.css')?>" rel="stylesheet">
     
     <!-- Sky CSS-->
     <link type="text/css" href="<?php $this->options->themeUrl('/assets/style.css')?>" rel="stylesheet">
@@ -38,7 +38,7 @@
     <script src="<?php $this->options->themeUrl('/assets/js/argon-design-system.min.js');?>"></script>
     
     <!-- Highlight.js via jsDelivr -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.1.0/build/styles/default.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.1.0/build/styles/atom-one-dark.min.css">
     <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.1.0/build/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
 
