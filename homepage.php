@@ -16,6 +16,10 @@ $this->need('functions.php'); // 不知道为啥，似乎模版页面不会自�
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title><?php $this->options->title(); ?></title>
 
+    <link rel="apple-touch-icon" href="<?php $this->options->logoUrl() ?>">
+    <link rel="shortcut icon" href="<?php $this->options->themeUrl('/assets/favicon.ico')?>" />
+    <link rel="bookmark" href="<?php $this->options->themeUrl('/assets/favicon.ico')?>" type="image/x-icon"/>
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet">
 
