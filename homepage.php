@@ -46,6 +46,10 @@ $this->need('functions.php'); // 不知道为啥，似乎模版页面不会自�
     <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.1.0/build/highlight.min.js"></script>
     <script>hljs.highlightAll();</script> -->
 
+    <!-- Darkreader.js via jsDelivr -->
+    <script src="https://cdn.jsdelivr.net/npm/darkreader@4.9.34/darkreader.min.js"></script>
+    <script>DarkReader.auto({brightness:100, contrast:90, sepia:10});</script>
+
     <?php $this->header(); ?>
 </head>
 <!--[if lt IE 8]>
