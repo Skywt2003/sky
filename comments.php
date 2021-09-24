@@ -11,7 +11,6 @@
                     <span class="font-weight-900"><?php $comments->author(); ?></span>
                     <br>
 	                <span class="small"><?php $comments->date('F jS, Y'); ?> at <?php $comments->date('h:i a'); ?></span>
-                    <!-- <p><?php #$comments->content(); ?></p> -->
                 </div>
             </div>
         </div>

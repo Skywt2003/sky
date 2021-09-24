@@ -67,7 +67,7 @@
         </a>
         <?php endif; ?>
         <?php if ($this->is('page')): ?>
-        <a class="badge badge-primary ml-1 mr-1" href="<?php $this->options->siteUrl();?>admin/write-post.php?cid=<?php $this->cid();?>" title="Edit">
+        <a class="badge badge-primary ml-1 mr-1" href="<?php $this->options->siteUrl();?>admin/write-page.php?cid=<?php $this->cid();?>" title="Edit">
             <i class="far fa-edit"></i>
             <?php _e('编辑此页'); ?>
         </a>
