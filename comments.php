@@ -3,31 +3,42 @@
 <?php function threadedComments($comments, $options) {
     $commentClass = '';
     if ($comments->levels > 0) $commentClass .= ' ml-5';
-    if ($comments->type == 'pingback' || $comments->type == 'traceback') $commentClass .= ' bg-secondary';
-?>
-    <!-- 评论列表区域 -->
-	<div id="<?php $comments->theId(); ?>" class="<?php echo $commentClass; ?>">
-	    <div class="d-flex align-items-center">
-	        <?php $comments->gravatar(64, '', '', 'avatar'); ?>
-            <div class="d-inline-block ml-1">
-                <span class="font-weight-900"><?php $comments->author(); ?></span>
-                <?php if ($comments->authorId == $comments->ownerId): ?>
-                    <span class="badge badge-secondary ml-1 mr-1"><?php _e('博主') ?></span>
-                <?php endif; ?>
-                <?php if ($comments->status == 'waiting'): ?>
-                <span class="badge badge-warning ml-1 mr-1">
-                    <i class="fas fa-ellipsis-h"></i>
-                    <?php _e('等待审核') ?>
-                </span>
-                <?php endif; ?>
-                <br>
-	            <span class="small"><?php $comments->date('F jS, Y'); ?> at <?php $comments->date('h:i a'); ?></span>
-                <span class="small ml-1 mr-1"><?php $comments->reply('<i class="fa fa-reply"></i> Reply'); ?><span>
+    ?>
+    <?php if ($comments->type == 'pingback' || $comments->type == 'traceback'){?>
+	    <div id="<?php $comments->theId(); ?>">
+            <div class="card">
+                <div class="card-body">
+                    <span class="font-weight-900"><?php $comments->author(); ?></span>
+                    <br>
+	                <span class="small"><?php $comments->date('F jS, Y'); ?> at <?php $comments->date('h:i a'); ?></span>
+                    <!-- <p><?php #$comments->content(); ?></p> -->
+                </div>
             </div>
         </div>
-        <p><?php $comments->content(); ?></p>
-        <?php if ($comments->children): $comments->threadedComments($options); endif; ?>
-    </div>
+    <?php } else { ?>
+	    <div id="<?php $comments->theId(); ?>" class="mt-3 mb-3<?php echo $commentClass; ?>">
+	        <div class="d-flex align-items-center">
+	            <?php $comments->gravatar(64, '', '', 'avatar'); ?>
+                <div class="d-inline-block ml-1">
+                    <span class="font-weight-900"><?php $comments->author(); ?></span>
+                    <?php if ($comments->authorId == $comments->ownerId): ?>
+                        <span class="badge badge-secondary ml-1 mr-1"><?php _e('博主') ?></span>
+                    <?php endif; ?>
+                    <?php if ($comments->status == 'waiting'): ?>
+                    <span class="badge badge-warning ml-1 mr-1">
+                        <i class="fas fa-ellipsis-h"></i>
+                        <?php _e('等待审核') ?>
+                    </span>
+                    <?php endif; ?>
+                    <br>
+	                <span class="small"><?php $comments->date('F jS, Y'); ?> at <?php $comments->date('h:i a'); ?></span>
+                    <span class="small ml-1 mr-1"><?php $comments->reply('<i class="fa fa-reply"></i> Reply'); ?><span>
+                </div>
+            </div>
+            <p><?php $comments->content(); ?></p>
+            <?php if ($comments->children): $comments->threadedComments($options); endif; ?>
+        </div>
+    <?php } ?>
 <?php } ?>
 
 <div id="comments">
