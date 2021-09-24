@@ -14,6 +14,7 @@ else $avatarUrl = '{image}';
 <div class="col mt-5" id="main" role="main">
     <article>
         <h1 class="font-weight-bold post-title">友情链接</h1>
+		<hr>
 		<div class="row">
 			<?php 
 			Links_Plugin::output($pattern='
