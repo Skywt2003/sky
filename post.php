@@ -13,12 +13,6 @@
                 <time class="lately" datetime="<?php $this->date('c'); ?>" itemprop="datePublished" pubdate>Lately</time> | 
                 <time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date('Y-m-d D h:iA'); ?></time>
             </span>
-            <?php if ($this->user->hasLogin()): ?>
-                <a class="badge badge-primary ml-1 mr-1" href="<?php $this->options->siteUrl();?>admin/write-post.php?cid=<?php $this->cid();?>">
-                    <i class="far fa-edit"></i>
-                    <?php _e('编辑'); ?>
-                </a>
-            <?php endif;?>
         </div>
         <hr>
         <?php

@@ -52,6 +52,42 @@
 <![endif]-->
 <body>
 
+<?php if ($this->user->hasLogin()): ?>
+<nav class="container fixed-bottom p-2 navbar navbar-light">
+    <div>
+        欢迎，<a href="<?php $this->options->profileUrl(); ?>"><?php $this->user->screenName(); ?></a>
+        <?php if ($this->is('post')): ?>
+        <a class="badge badge-primary ml-1 mr-1" href="<?php $this->options->siteUrl();?>admin/write-post.php?cid=<?php $this->cid();?>" title="Edit">
+            <i class="far fa-edit"></i>
+            <?php _e('编辑此文'); ?>
+        </a>
+        <?php endif; ?>
+        <?php if ($this->is('page')): ?>
+        <a class="badge badge-primary ml-1 mr-1" href="<?php $this->options->siteUrl();?>admin/write-post.php?cid=<?php $this->cid();?>" title="Edit">
+            <i class="far fa-edit"></i>
+            <?php _e('编辑此页'); ?>
+        </a>
+        <?php endif; ?>
+        <a class="badge badge-default ml-1 mr-1" href="<?php $this->options->siteUrl('admin'); ?>" title="Backstage">
+            <i class="fas fa-user-cog"></i>
+            <?php _e('网站后台'); ?>
+        </a>
+        <a class="badge badge-default ml-1 mr-1" href="<?php $this->options->siteUrl('admin/options-theme.php'); ?>" title="Settings">
+            <i class="far fa-cog"></i>
+            <?php _e('主题设置'); ?>
+        </a>
+        <a class="badge badge-default ml-1 mr-1" href="#" onclick="javascript:location.reload();" title="Refresh">
+            <i class="fas fa-redo"></i>
+            <?php _e('刷新'); ?>
+        </a>
+        <a class="badge badge-default ml-1 mr-1" href="<?php $this->options->logoutUrl(); ?>" title="Logout">
+            <i class="fas fa-sign-out-alt"></i>
+            <?php _e('退出'); ?>
+        </a>
+    </div>
+</nav>
+<?php endif; ?>
+
 <header id="header" class="clearfix mt-5 mb-4">
     <div class="container">
         <div class="row">
