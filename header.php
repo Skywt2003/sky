@@ -16,30 +16,26 @@
     <link rel="shortcut icon" href="<?php $this->options->themeUrl('/assets/favicon.ico')?>" />
     <link rel="bookmark" href="<?php $this->options->themeUrl('/assets/favicon.ico')?>" type="image/x-icon"/>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet">
-
     <!-- FontAwesome Icons -->
     <link href="https://cdn.staticfile.org/font-awesome/5.15.3/css/all.css" rel="stylesheet">
-    
-    <!-- Argon Theme CSS -->
+
+    <!-- JS: jQuery & popper & bootstrap -->
+    <!-- <script src="<?php #$this->options->themeUrl('/assets/js/core/jquery.min.js');?>"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <script src="<?php $this->options->themeUrl('/assets/js/core/popper.min.js');?>"></script>
+    <!-- <script src="<?php #$this->options->themeUrl('/assets/js/core/bootstrap.min.js');?>"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
+
+    <!-- lately.js -->
+    <script src="<?php $this->options->themeUrl('/assets/js/lately.js');?>"></script>
+
+    <!-- Argon Theme CSS & JS-->
     <link type="text/css" href="<?php $this->options->themeUrl('/assets/css/argon-design-system.css')?>" rel="stylesheet">
-    
+    <script src="<?php $this->options->themeUrl('/assets/js/argon-design-system.min.js');?>"></script>
+
     <!-- Sky CSS-->
     <link type="text/css" href="<?php $this->options->themeUrl('/assets/style.css')?>" rel="stylesheet">
-    
-    <!-- JS: jQuery & popper & bootstrap -->
-    <script src="<?php $this->options->themeUrl('/assets/js/core/jquery.min.js');?>"></script>
-    <!--<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>-->
-    <script src="<?php $this->options->themeUrl('/assets/js/core/popper.min.js');?>"></script>
-    <script src="<?php $this->options->themeUrl('/assets/js/core/bootstrap.min.js');?>"></script>
 
-    <!-- lately JS -->
-    <script src="https://tokinx.github.io/lately/lately.min.js"></script>
-
-    <!-- Argon Theme JS -->
-    <script src="<?php $this->options->themeUrl('/assets/js/argon-design-system.min.js');?>"></script>
-    
     <!-- Highlight.js via jsDelivr -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.1.0/build/styles/atom-one-dark.min.css">
     <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.1.0/build/highlight.min.js"></script>
