@@ -2,24 +2,20 @@
 <?php $this->need('header.php'); ?>
 
 <div class="col mt-5" id="main" role="main">
-    <article itemscope itemtype="http://schema.org/BlogPosting">
+    <article>
         <?php if ($this->fields->headPic !=''): ?>
             <img src=<?php $this->fields->headPic(); ?> class="img-fluid mx-auto d-block shadow rounded mb-3" alt="<?php $this->title(); ?>">
         <?php endif; ?> 
-        <h1 class="font-weight-bold post-title" itemprop="name headline"><?php $this->title() ?></h1>
+        <h1 class="font-weight-bold post-title"><?php $this->title() ?></h1>
         <div>
             <span class="text-gray">
                 <i class="far fa-calendar-alt ml-1 mr-1"></i>
-                <time class="lately" datetime="<?php $this->date('c'); ?>" itemprop="datePublished" pubdate>Lately</time> | 
-                <time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date('Y-m-d D h:iA'); ?></time>
+                <time class="lately" datetime="<?php $this->date('c'); ?>" pubdate>Lately</time> | 
+                <time datetime="<?php $this->date('c'); ?>"><?php $this->date('Y-m-d D h:iA'); ?></time>
             </span>
         </div>
         <hr>
-        <?php
-            $date1=date_create(date('c',$this->date->timeStamp));
-            $date2=date_create(date('c'));
-            $days=date_diff($date1,$date2);
-        ?>
+        <?php $date1=date_create(date('c',$this->date->timeStamp)); $date2=date_create(date('c')); $days=date_diff($date1,$date2); ?>
         <?php if ($this->options->oldPosts == 'able' && $days->format('%a') > 365): ?>
         <div class="alert alert-primary shadow mb-5" role="alert">
             这是一篇发布于 <?php echo $days->format('%a'); ?> 天以前的旧文。其中的部分内容可能已经过时。
@@ -28,10 +24,9 @@
             </button>
         </div>
         <?php endif; ?>
-        <div class="post-content" itemprop="articleBody">
+        <div class="post-content">
             <?php $this->content(); ?>
         </div>
-        <!--<p itemprop="keywords" class="post-tags"><?php _e('标签: '); ?><?php $this->tags(', ', true, 'none'); ?></p>-->
     </article>
     <hr>
     <span>
