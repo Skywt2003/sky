@@ -10,11 +10,10 @@ Demo：[skywt.cn](https://skywt.cn/)
 
 ## 使用 / Usage
 
-前往 Releases 下载源代码压缩包，解压后将文件夹重命名为 sky 并移动到 Typecho 主题目录，在 Typecho 启用主题后在主题设置中进行设置即可。
+前往 Releases 下载源代码压缩包，解压后将文件夹重命名为 sky 并移动到 Typecho 主题目录，在 Typecho 后台启用主题。
+在主题设置中进行一些设置之后才可以较为完善地使用。
 
 建议在「Typecho 后台设置 - 阅读 - 站点首页」中选择「直接调用 homepage.php 模板文件」，体验一个简洁的全屏首页。
-
-集成了 highlight.js，不建议使用其他代码高亮的插件。
 
 ### 关于字段（themeFields）
 
@@ -26,14 +25,17 @@ Demo：[skywt.cn](https://skywt.cn/)
 
 ### 引用的库和资源
 
+集成了 highlight.js，不建议使用其他代码高亮的插件。
+集成了 darkreader.js，不建议使用其他启用 Darkmode 的插件。
+
 - [Argon Design System](https://demos.creative-tim.com/argon-design-system/index.html)
- - jQuery
- - Bootstrap 4
- - Popper.js
+  - jQuery (via jsDelivr)
+  - Bootstrap 4 (via jsDelivr)
+  - Popper.js
 - Fontawesome (via Staticfile)
 - highlight.js (via jsDelivr)
+- darkreader.js (vis jsDelivr)
 - [lately.js](https://github.com/Tokinx/lately)
-- Google Fonts
 
 ### 关于浏览器支持
 
@@ -44,15 +46,18 @@ Demo：[skywt.cn](https://skywt.cn/)
 
 GNU GENERAL PUBLIC LICENSE
 
-## 待咕 / To-do
-
-- [ ] 搜索功能
-- [ ] 夜间模式
-- [ ] 文章头图
-- [ ] 主题更新检测
-
 ## 更新记录 / Changelog
 
 ### 1.0
 
 - 第一个能用的正式版本！
+
+### 1.2
+
+这是第一个自认为比较完善的版本，虽然功能有所不足，不过整体体验还算可以。
+
+- 增加了友情链接页面
+- 用 Darkreader.js 实现 Darkmode
+- 增加网站管理工具栏，登录后可见
+- 使用 CDN（jsDelivr）调取一些资源，提高访问速度
+- 优化部分样式，修复一些 bug
