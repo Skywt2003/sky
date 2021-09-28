@@ -91,17 +91,12 @@
 <header id="header" class="clearfix mt-5 mb-4">
     <div class="container">
         <div class="row">
-            <div class="site-name col">
-            <?php if ($this->options->logoUrl): ?>
+            <div class="col">
                 <div class="text-center">
                     <img src="<?php $this->options->logoUrl() ?>" class="site-avatar shadow rounded-circle mx-auto d-block" alt="<?php $this->options->title() ?>" width=128 height=128>
                     <h2 class="mt-3 font-weight-bold text-default"><?php $this->options->title() ?></h2>
                     <p class="description"><?php $this->options->description() ?></p>
                 </div>
-            <?php else: ?>
-                <a id="logo" href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title() ?></a>
-        	    <p class="description text-gray"><?php $this->options->description() ?></p>
-            <?php endif; ?>
             </div>
         </div><!-- end .row -->
     </div>
