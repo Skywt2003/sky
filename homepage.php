@@ -94,11 +94,25 @@ $this->need('functions.php'); // 不知道为啥，似乎模版页面不会自�
             </div><!-- end .row -->
         </div>
     </header><!-- end #header -->
-    <nav class="container navbar navbar-light navbar-expand-sm">
+    <nav class="container navbar navbar-light navbar-expand-lg">
+        <!-- 这里好像是 Argon 的 bug，如果写 navbar-expand-sm 的话屏幕大小在一定范围内导航栏会消失 -->
+        <!-- 其实更喜欢原生 Bootstrap5 的折叠样式而非 Argon 的浮窗样式。如果删除 navbar-expand-lg 的 class 就会调用折叠样式，只可惜没法自适应 -->
+        <a></a> <!-- 十分简陋的处理方式，为了让 × 符号在右边 -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <i class="fa fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <div class="navbar-collapse-header">
+                <div class="row">
+                    <div class="col-6 collapse-brand">Menu</div>
+                    <div class="col-6 collapse-close">
+                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="collapsibleNavbar" aria-expanded="true" aria-label="Toggle navigation">
+                            <!-- Argon 里默认用两根竖线拼成 × 符号，默认这里的元素会被旋转 45 度 -->
+                            <i class="fas fa-times" style="transform: none"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
             <ul class="col navbar-nav justify-content-center pr-0">
                 <li class="nav-item">
                     <a class="nav-link nav-link-icon text-gray" href="<?php $this->options->siteUrl();?>">

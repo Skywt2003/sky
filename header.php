@@ -102,11 +102,23 @@
     </div>
 </header><!-- end #header -->
 
-<nav class="container navbar navbar-light navbar-expand-sm sticky-top">
+<nav class="container navbar navbar-light navbar-expand-lg sticky-top">
+    <a></a> <!-- 十分简陋的处理方式 -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <i class="fa fa-bars"></i>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <div class="navbar-collapse-header">
+            <div class="row">
+                <div class="col-6 collapse-brand">Menu</div>
+                <div class="col-6 collapse-close">
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="collapsibleNavbar" aria-expanded="true" aria-label="Toggle navigation">
+                        <!-- Argon 里默认用两根竖线拼成 × 符号，默认这里的元素会被旋转 45 度 -->
+                        <i class="fas fa-times" style="transform: none"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
         <ul class="col navbar-nav justify-content-center pr-0">
             <li class="nav-item">
                 <a class="nav-link nav-link-icon <?php if ($this->is('index')){echo 'text-default';}else{echo 'text-gray';}?>" href="<?php $this->options->siteUrl();?>">
