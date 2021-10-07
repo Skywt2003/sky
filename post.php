@@ -12,6 +12,11 @@
                 <i class="far fa-calendar-alt ml-1 mr-1"></i>
                 <time class="lately" datetime="<?php $this->date('c'); ?>" pubdate>Lately</time> | 
                 <time datetime="<?php $this->date('c'); ?>"><?php $this->date('Y-m-d D h:iA'); ?></time>
+                <?php if ($this->fields->pubPlace != ''): ?>
+                    <br>
+                    <i class="fas fa-map-marker-alt ml-1 mr-1"></i>
+                    <?php echo $this->fields->pubPlace; ?>
+                <?php endif; ?>
             </span>
         </div>
         <hr>
