@@ -17,7 +17,19 @@
     <?php } else { ?>
 	    <div id="<?php $comments->theId(); ?>" class="mt-3 mb-3<?php echo $commentClass; ?>">
 	        <div class="d-flex align-items-center">
-	            <?php $comments->gravatar(64, '', '', 'avatar'); ?>
+                <?php $qq = str_replace('@qq.com', '', $comments->mail);
+                    // 原计划如果是 QQ 邮箱并且没有 Gravatar 头像设置，则显示为 QQ 头像，
+                    // 但是好像没法把 QQ 头像调用的 API 设置成 gravatar 的 default，返回 400 错误
+                    // 只好采用 是 QQ 邮箱就显示 QQ 头像 的方案
+			        if (strstr($comments->mail, "qq.com") && is_numeric($qq) && strlen($qq) < 11 && strlen($qq) > 4){
+			            $avatarUrl = 'https://q3.qlogo.cn/g?b=qq&nk='.$qq.'&s=100';
+			        } else {
+                        $avatarUrl = __TYPECHO_GRAVATAR_PREFIX__;
+                        if (!empty($comments->mail)) { $avatarUrl .= md5(strtolower(trim($comments->mail))); }
+                        $avatarUrl .= '?s='. '64' . '&amp;r=' . Helper::options()->commentsAvatarRating . '&amp;d=' . Helper::options()->themeUrl.'/assets/visitor.png';
+                    }
+                ?>
+                <img class="avatar" src="<?php echo $avatarUrl; ?>" alt="<?php echo $comments->author; ?>" width="64" height="64" />';
                 <div class="d-inline-block ml-1">
                     <span class="font-weight-900"><?php $comments->author(); ?></span>
                     <?php if ($comments->authorId == $comments->ownerId): ?>
