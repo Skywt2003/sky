@@ -15,6 +15,10 @@ Demo：[skywt.cn](https://skywt.cn/)
 
 建议在「Typecho 后台设置 - 阅读 - 站点首页」中选择「直接调用 homepage.php 模板文件」，体验一个简洁的全屏首页。
 
+### 关于 KaTeX
+
+遵从 Markdown 语法，在写作中单个美元符号 `$` 中的是行内公式，两个美元符号 `$$` 中的是单行公式。
+
 ### 关于字段（themeFields）
 
 - 文章头图地址：填入一个图片 URL 地址, 就可以让文章加上头图。
@@ -27,6 +31,7 @@ Demo：[skywt.cn](https://skywt.cn/)
 
 集成了 highlight.js，不建议使用其他代码高亮的插件。
 集成了 darkreader.js，不建议使用其他启用 Darkmode 的插件。
+集成了 KaTeX ，不建议使用其他数学公式插件。
 
 - [Argon Design System](https://demos.creative-tim.com/argon-design-system/index.html)
   - jQuery (via jsDelivr)
@@ -36,6 +41,7 @@ Demo：[skywt.cn](https://skywt.cn/)
 - highlight.js (via jsDelivr)
 - darkreader.js (vis jsDelivr)
 - [lately.js](https://github.com/Tokinx/lately)
+- KaTeX
 
 ### 关于浏览器支持
 

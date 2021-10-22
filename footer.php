@@ -4,6 +4,7 @@
     </div>
 </div><!-- end #body -->
 
+<!-- Advanced styles -->
 <script>
     $(document).ready(function(){
         $("article .post-content img").addClass("img-fluid mx-auto d-block shadow rounded");
@@ -11,8 +12,40 @@
         $("article pre").addClass("shadow rounded");
         $("table").addClass("table");
     });
-    Lately({'target' : '.lately'});
 </script>
+
+<!-- lately.js -->
+<script>Lately({'target' : '.lately'});</script>
+
+<!-- KaTeX js via jsDelivr -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js"></script>
+<script>
+    function triggerRenderingLaTeX(element) {
+        renderMathInElement(
+            element,
+            {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                ]
+            }
+        );
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+        triggerRenderingLaTeX(document.body);
+    });
+    document.addEventListener("DOMContentLoaded", function() {
+        var wmdPreviewLink = document.querySelector("a[href='#wmd-preview']");
+        var wmdPreviewContainer = document.querySelector("#wmd-preview");
+        if(wmdPreviewLink && wmdPreviewContainer) {
+            wmdPreviewLink.onclick = function() {
+                triggerRenderingLaTeX(wmdPreviewContainer);
+            };
+        }
+    });
+</script>
+
 <footer class="mt-5 mb-5" id="footer" role="footer">
     <div class="container">
         <hr>

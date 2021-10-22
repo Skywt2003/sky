@@ -45,6 +45,9 @@
     <script src="https://cdn.jsdelivr.net/npm/darkreader@4.9.34/darkreader.min.js"></script>
     <script>DarkReader.auto({brightness:100, contrast:90, sepia:10});</script>
 
+    <!-- KaTeX css via jsDelivr-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css">
+
     <?php $this->header(); ?>
 </head>
 <!--[if lt IE 8]>
