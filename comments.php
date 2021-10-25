@@ -29,8 +29,8 @@
                         $avatarUrl .= '?s='. '64' . '&amp;r=' . Helper::options()->commentsAvatarRating . '&amp;d=' . Helper::options()->themeUrl.'/assets/visitor.png';
                     }
                 ?>
-                <img class="avatar" src="<?php echo $avatarUrl; ?>" alt="<?php echo $comments->author; ?>" width="64" height="64" />';
-                <div class="d-inline-block ml-1">
+                <img class="avatar" src="<?php echo $avatarUrl; ?>" alt="<?php echo $comments->author; ?>" width="64" height="64" />
+                <div class="d-inline-block ml-2">
                     <span class="font-weight-900"><?php $comments->author(); ?></span>
                     <?php if ($comments->authorId == $comments->ownerId): ?>
                         <span class="badge badge-secondary ml-1 mr-1"><?php _e('博主') ?></span>
@@ -41,6 +41,7 @@
                         <?php _e('等待审核') ?>
                     </span>
                     <?php endif; ?>
+                    <?php UserAgent_Plugin::render($comments->agent); ?>
                     <br>
 	                <span class="small"><?php $comments->date('F jS, Y'); ?> at <?php $comments->date('h:i a'); ?></span>
                     <span class="small ml-1 mr-1"><?php $comments->reply('<i class="fa fa-reply"></i> Reply'); ?><span>
