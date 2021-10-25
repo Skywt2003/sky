@@ -19718,6 +19718,13 @@ textarea[resize="horizontal"] {
 
   .navbar-collapse {
     width: calc(100% - 1.4rem);
+    margin-left: 50px;
+  }
+
+  /* 很不喜欢这个 float 式的 navbar 样式！！不过暂时还没搞清楚什么原理。改掉了先。 */
+
+  /* .navbar-collapse {
+    width: calc(100% - 1.4rem);
     position: absolute;
     top: 0;
     left: 0;
@@ -19782,10 +19789,10 @@ textarea[resize="horizontal"] {
 
   .navbar-collapse.collapsing-out {
     animation: hide-navbar-collapse .2s ease forwards;
-  }
+  } */
 }
 
-@keyframes show-navbar-collapse {
+/* @keyframes show-navbar-collapse {
   0% {
     opacity: 0;
     transform: scale(0.95);
@@ -19809,7 +19816,7 @@ textarea[resize="horizontal"] {
     opacity: 0;
     transform: scale(0.95);
   }
-}
+} */
 
 @keyframes show-navbar-dropdown {
   0% {
