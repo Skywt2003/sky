@@ -15,7 +15,10 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 <div class="col mt-5" id="main" role="main">
     <?php if ($this->options->notification !='') { ?>
     <div class="alert alert-primary alert-dismissible fade show shadow" role="alert">
-        <?php $this->options->notification(); ?>
+        <?php if ($this->options->notificationIcon != '') { ?>
+            <span class="alert-inner--icon"><i class="<?php $this->options->notificationIcon(); ?>"></i></span>
+        <?php } ?>
+        <span class="alert-inner--text"><?php $this->options->notification(); ?></span>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
