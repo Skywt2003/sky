@@ -10,7 +10,7 @@
         <h1 class="font-weight-bold post-title"><?php $this->title() ?></h1>
         <hr>
         <div class="post-content">
-            <?php $this->content(); ?>
+            <?php echo exContent($this->content); ?>
         </div>
     </article>
     <?php $this->need('comments.php'); ?>

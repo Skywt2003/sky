@@ -30,7 +30,7 @@
         </div>
         <?php endif; ?>
         <div class="post-content">
-            <?php $this->content(); ?>
+            <?php echo exContent($this->content); ?>
         </div>
     </article>
     <hr>

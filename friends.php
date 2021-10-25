@@ -15,6 +15,7 @@ else $avatarUrl = '{image}';
     <article>
         <h1 class="font-weight-bold post-title">友情链接</h1>
 		<hr>
+		<?php echo exContent($this->content); ?>
 		<div class="row">
 			<?php 
 			Links_Plugin::output($pattern='

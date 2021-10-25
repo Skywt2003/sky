@@ -50,6 +50,88 @@ function themeFields($layout) {
     $layout->addItem($linkTo);
 }
 
+function exContent($content){
+    // 短代码提示框，期望用数组的办法一次性实现，但是正则表达式太难了
+    // $alertIcons = array('primary' => 'fas fa-info-circle',
+    //                     'success' => 'fas fa-info-circle',
+    //                     'info' => 'fas fa-info-circle',
+    //                     'warning' => 'fa-exclamation-circle',
+    //                     'danger' => 'fas fa-skull-crossbones',
+    //                     'default' => 'fas fa-info-circle',
+    //                     'secondary' => 'fas fa-info-circle');
+
+    $pattern = '/\[(primary)\](.*?)\[\s*\/\1\s*\]/';
+    $replacement = '
+    <div class="alert alert-primary fade show shadow" role="alert">
+        <span class="alert-inner--icon"><i class="fas fa-info-circle"></i></span>
+        <span class="alert-inner--text">$2</span>
+    </div>';
+    $content = preg_replace($pattern, $replacement, $content);
+
+    $pattern = '/\[(default)\](.*?)\[\s*\/\1\s*\]/';
+    $replacement = '
+    <div class="alert alert-default fade show shadow" role="alert">
+        <span class="alert-inner--icon"><i class="fas fa-info-circle"></i></span>
+        <span class="alert-inner--text">$2</span>
+    </div>';
+    $content = preg_replace($pattern, $replacement, $content);
+
+    $pattern = '/\[(secondary)\](.*?)\[\s*\/\1\s*\]/';
+    $replacement = '
+    <div class="alert alert-secondary fade show shadow" role="alert">
+        <span class="alert-inner--icon text-default"><i class="fas fa-info-circle"></i></span>
+        <span class="alert-inner--text text-default">$2</span>
+    </div>';
+    $content = preg_replace($pattern, $replacement, $content);
+
+    $pattern = '/\[(success)\](.*?)\[\s*\/\1\s*\]/';
+    $replacement = '
+    <div class="alert alert-success fade show shadow" role="alert">
+        <span class="alert-inner--icon"><i class="fas fa-info-circle"></i></span>
+        <span class="alert-inner--text">$2</span>
+    </div>';
+    $content = preg_replace($pattern, $replacement, $content);
+
+    $pattern = '/\[(info)\](.*?)\[\s*\/\1\s*\]/';
+    $replacement = '
+    <div class="alert alert-info fade show shadow" role="alert">
+        <span class="alert-inner--icon"><i class="fas fa-info-circle"></i></span>
+        <span class="alert-inner--text">$2</span>
+    </div>';
+    $content = preg_replace($pattern, $replacement, $content);
+
+    $pattern = '/\[(warning)\](.*?)\[\s*\/\1\s*\]/';
+    $replacement = '
+    <div class="alert alert-warning fade show shadow" role="alert">
+        <span class="alert-inner--icon"><i class="fas fa-exclamation-circle"></i></span>
+        <span class="alert-inner--text">$2</span>
+    </div>';
+    $content = preg_replace($pattern, $replacement, $content);
+
+    $pattern = '/\[(danger)\](.*?)\[\s*\/\1\s*\]/';
+    $replacement = '
+    <div class="alert alert-danger fade show shadow" role="alert">
+        <span class="alert-inner--icon"><i class="fas fa-skull-crossbones"></i></span>
+        <span class="alert-inner--text">$2</span>
+    </div>';
+    $content = preg_replace($pattern, $replacement, $content);
+
+    // $pattern = '/\[(alert-(.*?))\](.*?)\[\s*\/\1\s*\]/';
+    // $replacement = '
+    // <div class="alert alert-$2 fade show shadow" role="alert">
+    //     <span class="alert-inner--icon"><i class="$alertIcons[$2]"></i></span>
+    //     <span class="alert-inner--text">$3</span>
+    // </div>';
+    // $content = preg_replace($pattern, $replacement, $content);
+
+    // 正则表达式也太难了 。・゜・(ノД`)・゜・。
+    // $pattern = '/\[link (.*)\](.*)\[link\]/';
+    // $replacement = '
+    // <a class="btn btn-secondary" role="button" href="$1" target="_blank">$2</a>';
+    // $content = preg_replace($pattern, $replacement, $content);
+
+    return $content;
+}
 
 // 来自插件 https://github.com/elatisy/Typecho_WordsCounter
 function allOfCharacters() {
