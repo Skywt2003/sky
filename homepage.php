@@ -21,14 +21,14 @@ $this->need('functions.php'); // 不知道为啥，似乎模版页面不会自�
     <link rel="bookmark" href="<?php $this->options->themeUrl('/assets/favicon.ico')?>" type="image/x-icon"/>
 
     <!-- FontAwesome Icons -->
-    <link href="https://cdn.staticfile.org/font-awesome/5.15.3/css/all.css" rel="stylesheet">
+    <link href="//cdn.staticfile.org/font-awesome/5.15.3/css/all.css" rel="stylesheet">
 
     <!-- JS: jQuery & popper & bootstrap -->
     <!-- <script src="<?php #$this->options->themeUrl('/assets/js/core/jquery.min.js');?>"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
     <script src="<?php $this->options->themeUrl('/assets/js/core/popper.min.js');?>"></script>
     <!-- <script src="<?php #$this->options->themeUrl('/assets/js/core/bootstrap.min.js');?>"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
 
     <!-- lately.js -->
     <!-- <script src="<?php #$this->options->themeUrl('/assets/js/lately.js');?>"></script> -->
@@ -46,8 +46,11 @@ $this->need('functions.php'); // 不知道为啥，似乎模版页面不会自�
     <script>hljs.highlightAll();</script> -->
 
     <!-- Darkreader.js via jsDelivr -->
-    <script src="https://cdn.jsdelivr.net/npm/darkreader@4.9.34/darkreader.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/darkreader@latest/darkreader.min.js"></script>
     <script>DarkReader.auto({brightness:100, contrast:90, sepia:10});</script>
+    
+    <!-- KaTeX css via jsDelivr-->
+    <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"> -->
 
     <?php $this->header(); ?>
 </head>
