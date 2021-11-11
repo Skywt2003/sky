@@ -21,6 +21,9 @@ function themeConfig($form) {
     $notificationIcon = new Typecho_Widget_Helper_Form_Element_Text('notificationIcon', NULL, NULL, _t('网站公告图标'), _t('显示在首页网站公告信息框前的 FontAwesome 图标代码，留空则不显示'));
     $form->addInput($notificationIcon);
 
+    $comments_noti = new Typecho_Widget_Helper_Form_Element_Text('comments_noti', NULL, NULL, _t('评论区公告'), _t('显示在评论区，留空则不显示'));
+    $form->addInput($comments_noti);
+
     $bottomLinks = new Typecho_Widget_Helper_Form_Element_Text('bottomLinks', NULL, NULL, _t('底部链接'), _t('（需要配合<a href="http://www.imhan.com/archives/typecho-links/" target="_blank">友情链接插件</a>使用）网站底部的链接分类名称'));
     $form->addInput($bottomLinks);
 

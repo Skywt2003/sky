@@ -63,6 +63,15 @@
     <!-- 评论提交区域 -->
     <?php if ($this->allow('comment')): ?>
     <hr>
+    <?php if ($this->options->comments_noti !='') { ?>
+    <div class="alert alert-primary alert-dismissible fade show shadow" role="alert">
+        <span class="alert-inner--icon"><i class="fas fa-exclamation-circle"></i></span>
+        <span class="alert-inner--text"><?php $this->options->comments_noti(); ?></span>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <?php } ?>
     <div id="<?php $this->respondId(); ?>" class="respond">
         <div>
             <?php $comments->cancelReply('<i class="fa fa-window-close"></i> 取消回复'); ?>
