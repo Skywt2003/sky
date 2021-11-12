@@ -72,3 +72,7 @@ code {
 .friend {
     height: 80px;
 }
+
+html{
+    scroll-behavior: smooth;
+}

@@ -136,6 +136,32 @@ function exContent($content){
     // <a class="btn btn-secondary" role="button" href="$1" target="_blank">$2</a>';
     // $content = preg_replace($pattern, $replacement, $content);
 
+    // 文章 TOC 功能
+    // [0]: 完整的匹配 <h2>conTent</h2>
+    // [1]: 匹配中的数字 2
+    // [2]: 匹配中的内容 conTent
+    if (preg_match_all('/<h(\d)>(.*)<\/h\d>/isU', $content, $outarr)){
+        $toc_out = "";
+        $minlevel = 6;
+        for ($key=0; $key<count($outarr[2]); $key++) $minlevel = min($minlevel, $outarr[1][$key]);
+
+        $curlevel = $minlevel-1;
+        for ($key=0; $key<count($outarr[2]); $key++) {
+            $ta = $content;
+            $tb = strpos($ta, $outarr[0][$key]);
+            $level = $outarr[1][$key];
+            // $content = substr($ta, 0, $tb). "<h{$level} id=\"toc_title{$key}\">{$outarr[2][$key]}</h{$level}>". substr($ta, strlen($outarr[0][$key])+$tb);
+            $content = substr($ta, 0, $tb). "<a id=\"toc_title{$key}\" style=\"position:relative; top:-50px\"></a>". substr($ta, $tb);
+            // 用伪锚点实现链接偏移。Safari 居然不支持！！
+            if ($level > $curlevel) $toc_out.=str_repeat("<ol>\n", $level-$curlevel);
+            elseif ($level < $curlevel) $toc_out.=str_repeat("</ol>\n", $curlevel-$level);
+            $curlevel = $level;
+            $toc_out .= "<li><a href=\"#toc_title{$key}\">{$outarr[2][$key]}</a></li>\n";
+        }
+        
+        $content = "<div id=\"tableOfContents\">{$toc_out}</div>". $content;
+    }
+
     return $content;
 }
 
