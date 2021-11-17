@@ -67,15 +67,19 @@ $this->need('functions.php'); // 不知道为啥，似乎模版页面不会自�
             <i class="fas fa-user-cog"></i>
             <?php _e('网站后台'); ?>
         </a>
+        <a class="badge badge-default ml-1 mr-1" href="<?php $this->options->siteUrl('admin/manage-posts.php?status=draft'); ?>" title="Drafts">
+            <i class="far fa-edit"></i>
+            <?php _e('草稿箱'); ?>
+        </a>
         <a class="badge badge-default ml-1 mr-1" href="<?php $this->options->siteUrl('admin/options-theme.php'); ?>" title="Settings">
             <i class="far fa-cog"></i>
             <?php _e('主题设置'); ?>
         </a>
-        <a class="badge badge-default ml-1 mr-1" href="#" onclick="javascript:location.reload();" title="Refresh">
+        <a class="badge badge-secondary ml-1 mr-1" href="#" onclick="javascript:location.reload();" title="Refresh">
             <i class="fas fa-redo"></i>
             <?php _e('刷新'); ?>
         </a>
-        <a class="badge badge-default ml-1 mr-1" href="<?php $this->options->logoutUrl(); ?>" title="Logout">
+        <a class="badge badge-secondary ml-1 mr-1" href="<?php $this->options->logoutUrl(); ?>" title="Logout">
             <i class="fas fa-sign-out-alt"></i>
             <?php _e('退出'); ?>
         </a>
