@@ -45,7 +45,7 @@ function themeFields($layout) {
     $pageIcon = new Typecho_Widget_Helper_Form_Element_Text('pageIcon', NULL, NULL, _t('页面图标'), _t('仅对非隐藏页面有效。在这里为页面填入一个 fontawesome icon 代码，在菜单栏链接前会显示图标。Fontawesome 是 5.15 版本，参见 <a href="https://fontawesome.com/v5.15/icons" target="_blank">FontAwesome 图标库</a>。留空则不显示图标。'));
     $layout->addItem($pageIcon);
 
-    $linkTo = new Typecho_Widget_Helper_Form_Element_Text('linkTo', NULL, NULL, _t('页面重定向至'), _t('仅对页面有效。在这里输入一个 URL，打开该页面时会自动重定向到这个 URL，用于定制菜单栏。留空则不重定向。'));
+    $linkTo = new Typecho_Widget_Helper_Form_Element_Text('linkTo', NULL, NULL, _t('重定向至'), _t('在这里输入一个 URL，打开该页面或文章时会自动重定向到这个 URL，可以用于定制菜单栏。留空则不重定向。'));
     $layout->addItem($linkTo);
 }
 

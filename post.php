@@ -1,6 +1,10 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <?php $this->need('header.php'); ?>
 
+<?php if ($this->fields->linkTo): ?>
+    <script type='text/javascript'>window.location.href = '<?php echo $this->fields->linkTo ?>';</script>
+<?php endif; ?>
+
 <div class="col mt-5" id="main" role="main">
     <article>
         <?php if ($this->fields->headPic !=''): ?>
