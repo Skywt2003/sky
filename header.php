@@ -48,6 +48,8 @@
     <!-- KaTeX css via jsDelivr-->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
+    <?php $this->options->headerCode(); ?>
+
     <?php $this->header(); ?>
 </head>
 <!--[if lt IE 8]>

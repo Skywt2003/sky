@@ -27,6 +27,12 @@ function themeConfig($form) {
     $bottomLinks = new Typecho_Widget_Helper_Form_Element_Text('bottomLinks', NULL, NULL, _t('底部链接'), _t('（需要配合<a href="http://www.imhan.com/archives/typecho-links/" target="_blank">友情链接插件</a>使用）网站底部的链接分类名称'));
     $form->addInput($bottomLinks);
 
+    $headerCode = new Typecho_Widget_Helper_Form_Element_Textarea('headerCode', NULL, NULL, _t('头部代码'), _t('在头部添加的代码'));
+    $form->addInput($headerCode);
+
+    $footerCode = new Typecho_Widget_Helper_Form_Element_Textarea('footerCode', NULL, NULL, _t('页脚代码'), _t('在页脚添加的代码'));
+    $form->addInput($footerCode);
+
     $oldPosts = new Typecho_Widget_Helper_Form_Element_Radio('oldPosts',
         array('able' => _t('启用'),
               'disable' => _t('禁用'),

@@ -52,6 +52,8 @@ $this->need('functions.php'); // 不知道为啥，似乎模版页面不会自�
     <!-- KaTeX css via jsDelivr-->
     <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"> -->
 
+    <?php $this->options->headerCode(); ?>
+
     <?php $this->header(); ?>
 </head>
 <!--[if lt IE 8]>
@@ -169,6 +171,7 @@ $this->need('functions.php'); // 不知道为啥，似乎模版页面不会自�
             <!-- <p>&copy; <?php #echo date('Y');?> <?php #$this->options->title(); ?> ♥ <?php #Typecho_Widget::widget('Widget_Stat')->to($stat); ?><?php #$stat->publishedPostsNum() ?> Posts <?php #allOfCharacters();?> Words crafted</p> -->
             <p>&copy; <?php echo date('Y');?> <?php $this->options->title(); ?> <i class="fas fa-heart text-danger"></i> <?php Typecho_Widget::widget('Widget_Stat')->to($stat); ?><?php $stat->publishedPostsNum() ?> Posts <?php allOfCharacters();?> Words crafted</p>
             <p>Powered by <a href="https://www.typecho.org">Typecho</a> | Theme <a href="https://skywt.cn/sky-theme">Sky</a> by <a href="https://skywt.cn/">SkyWT</a></p>
+            <?php $this->options->footerCode(); ?>
         </div>
     </div>
 </footer><!-- end #footer -->
