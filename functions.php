@@ -6,52 +6,52 @@ define('__TYPECHO_GRAVATAR_PREFIX__', 'https://gravatar.loli.net/avatar/');
 function themeConfig($form) {
     echo '<h2>Sky 主题设置</h2>';
 
-    $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', NULL, NULL, _t('站点 LOGO 地址'), _t('在这里填入一个图片 URL 地址, 以在网站标题前加上一个 LOGO'));
+    $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', NULL, Helper::options()->themeUrl.'/assets/avatar.png', '站点 LOGO 地址', '在这里填入一个图片 URL 地址, 以在网站标题前加上一个 LOGO');
     $form->addInput($logoUrl);
     
-    $icpInfo = new Typecho_Widget_Helper_Form_Element_Text('icpInfo', NULL, NULL, _t('ICP 备案号'), _t('显示在底部，留空则不显示'));
-    $form->addInput($icpInfo->addRule('xssCheck', _t('请不要使用特殊字符')));
+    $icpInfo = new Typecho_Widget_Helper_Form_Element_Text('icpInfo', NULL, NULL, 'ICP 备案号', '显示在底部，留空则不显示');
+    $form->addInput($icpInfo->addRule('xssCheck', '请不要使用特殊字符'));
 
-    $nisInfo = new Typecho_Widget_Helper_Form_Element_Text('nisInfo', NULL, NULL, _t('网安备案号'), _t('显示在底部，留空则不显示'));
-    $form->addInput($nisInfo->addRule('xssCheck', _t('请不要使用特殊字符')));
+    $nisInfo = new Typecho_Widget_Helper_Form_Element_Text('nisInfo', NULL, NULL, '网安备案号', '显示在底部，留空则不显示');
+    $form->addInput($nisInfo->addRule('xssCheck', '请不要使用特殊字符'));
 
-    $notification = new Typecho_Widget_Helper_Form_Element_Text('notification', NULL, NULL, _t('网站公告'), _t('显示在首页，留空则不显示'));
+    $notification = new Typecho_Widget_Helper_Form_Element_Text('notification', NULL, NULL, '网站公告', '显示在首页，留空则不显示');
     $form->addInput($notification);
 
-    $notificationIcon = new Typecho_Widget_Helper_Form_Element_Text('notificationIcon', NULL, NULL, _t('网站公告图标'), _t('显示在首页网站公告信息框前的 FontAwesome 图标代码，留空则不显示'));
+    $notificationIcon = new Typecho_Widget_Helper_Form_Element_Text('notificationIcon', NULL, NULL, '网站公告图标', '显示在首页网站公告信息框前的 FontAwesome 图标代码，留空则不显示');
     $form->addInput($notificationIcon);
 
-    $comments_noti = new Typecho_Widget_Helper_Form_Element_Text('comments_noti', NULL, NULL, _t('评论区公告'), _t('显示在评论区，留空则不显示'));
-    $form->addInput($comments_noti);
+    $commentsNotice = new Typecho_Widget_Helper_Form_Element_Text('commentsNotice', NULL, NULL, '评论区公告', '显示在评论区，留空则不显示');
+    $form->addInput($commentsNotice);
 
-    $bottomLinks = new Typecho_Widget_Helper_Form_Element_Text('bottomLinks', NULL, NULL, _t('底部链接'), _t('（需要配合<a href="http://www.imhan.com/archives/typecho-links/" target="_blank">友情链接插件</a>使用）网站底部的链接分类名称'));
+    $bottomLinks = new Typecho_Widget_Helper_Form_Element_Text('bottomLinks', NULL, NULL, '底部链接', '（需要配合<a href="http://www.imhan.com/archives/typecho-links/" target="_blank">友情链接插件</a>使用）网站底部的链接分类名称');
     $form->addInput($bottomLinks);
 
-    $headerCode = new Typecho_Widget_Helper_Form_Element_Textarea('headerCode', NULL, NULL, _t('头部代码'), _t('在头部添加的代码'));
+    $headerCode = new Typecho_Widget_Helper_Form_Element_Textarea('headerCode', NULL, NULL, '头部代码', '在头部添加的 HTML 代码，可以插入 JavsScript');
     $form->addInput($headerCode);
 
-    $footerCode = new Typecho_Widget_Helper_Form_Element_Textarea('footerCode', NULL, NULL, _t('页脚代码'), _t('在页脚添加的代码'));
+    $footerCode = new Typecho_Widget_Helper_Form_Element_Textarea('footerCode', NULL, NULL, '页脚代码', '在页脚添加的 HTML 代码，可以插入 JavsScript代码');
     $form->addInput($footerCode);
 
     $oldPosts = new Typecho_Widget_Helper_Form_Element_Radio('oldPosts',
-        array('able' => _t('启用'),
-              'disable' => _t('禁用'),
+        array('able' => '启用',
+              'disable' => '禁用',
         ),
-        'disable', _t('是否显示旧文提示'), _t('启用则会在一年前发布的文章页面显示“这是一篇旧文”'));
+        'disable', '是否显示旧文提示', '启用则会在一年前发布的文章页面显示“这是一篇旧文”');
     $form->addInput($oldPosts);
 }
 
 function themeFields($layout) {
-    $headPic = new Typecho_Widget_Helper_Form_Element_Text('headPic', NULL, NULL, _t('文章头图地址'), _t('仅对文章有效。在这里填入一个图片 URL 地址, 就可以让文章加上头图。留空则不显示头图。'));
+    $headPic = new Typecho_Widget_Helper_Form_Element_Text('headPic', NULL, NULL, '文章头图地址', '仅对文章有效。在这里填入一个图片 URL 地址, 就可以让文章加上头图。留空则不显示头图。');
     $layout->addItem($headPic);
 
-    $pubPlace = new Typecho_Widget_Helper_Form_Element_Text('pubPlace', NULL, NULL, _t('文章发布地点'), _t('仅对文章有效。在这里输入一个地点的名字，文章头部会显示。留空则不显示发布地点。'));
+    $pubPlace = new Typecho_Widget_Helper_Form_Element_Text('pubPlace', NULL, NULL, '文章发布地点', '仅对文章有效。在这里输入一个地点的名字，文章头部会显示。留空则不显示发布地点。');
     $layout->addItem($pubPlace);
 
-    $pageIcon = new Typecho_Widget_Helper_Form_Element_Text('pageIcon', NULL, NULL, _t('页面图标'), _t('仅对非隐藏页面有效。在这里为页面填入一个 fontawesome icon 代码，在菜单栏链接前会显示图标。Fontawesome 是 5.15 版本，参见 <a href="https://fontawesome.com/v5.15/icons" target="_blank">FontAwesome 图标库</a>。留空则不显示图标。'));
+    $pageIcon = new Typecho_Widget_Helper_Form_Element_Text('pageIcon', NULL, NULL, '页面图标', '仅对非隐藏页面有效。在这里为页面填入一个 fontawesome icon 代码，在菜单栏链接前会显示图标。Fontawesome 是 5.15 版本，参见 <a href="https://fontawesome.com/v5.15/icons" target="_blank">FontAwesome 图标库</a>。留空则不显示图标。');
     $layout->addItem($pageIcon);
 
-    $linkTo = new Typecho_Widget_Helper_Form_Element_Text('linkTo', NULL, NULL, _t('重定向至'), _t('在这里输入一个 URL，打开该页面或文章时会自动重定向到这个 URL，可以用于定制菜单栏。留空则不重定向。'));
+    $linkTo = new Typecho_Widget_Helper_Form_Element_Text('linkTo', NULL, NULL, '重定向至', '在这里输入一个 URL，打开该页面或文章时会自动重定向到这个 URL，可以用于定制菜单栏。留空则不重定向。');
     $layout->addItem($linkTo);
 }
 

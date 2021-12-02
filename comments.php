@@ -63,10 +63,10 @@
     <!-- 评论提交区域 -->
     <?php if ($this->allow('comment')): ?>
     <hr>
-    <?php if ($this->options->comments_noti !='') { ?>
+    <?php if ($this->options->commentsNotice !='') { ?>
     <div class="alert alert-primary alert-dismissible fade show shadow" role="alert">
         <span class="alert-inner--icon"><i class="fas fa-exclamation-circle"></i></span>
-        <span class="alert-inner--text"><?php $this->options->comments_noti(); ?></span>
+        <span class="alert-inner--text"><?php $this->options->commentsNotice(); ?></span>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>

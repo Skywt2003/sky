@@ -5,8 +5,8 @@
     <article>
             <h1 class="font-weight-bold">404 NOT FOUND.</h1>
             <hr>
-            <p><?php _e('您要找的页面不存在！'); ?></p>
-            <p><a class="btn btn-primary" href=<?php $this->options->siteUrl(); ?> ><?php _e('返回首页'); ?></a> </p>
+            <p>您要找的页面不存在！</p>
+            <p><a class="btn btn-primary" href=<?php $this->options->siteUrl(); ?>>返回首页</a> </p>
     </article>
 </div><!-- end #content-->
 
