@@ -41,7 +41,8 @@
                         <?php _e('等待审核') ?>
                     </span>
                     <?php endif; ?>
-                    <?php UserAgent_Plugin::render($comments->agent); ?>
+                    <?php showUserAgent($comments->agent); ?>
+                    <span class="small"><?php showLocation($comments->ip); ?></span>
                     <br>
 	                <span class="small"><?php $comments->date('F jS, Y'); ?> at <?php $comments->date('h:i a'); ?></span>
                     <span class="small ml-1 mr-1"><?php $comments->reply('<i class="fa fa-reply"></i> Reply'); ?><span>

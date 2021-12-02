@@ -164,29 +164,63 @@ function exContent($content){
     return $content;
 }
 
-// 来自插件 https://github.com/elatisy/Typecho_WordsCounter
+// 来自插件 WordsCounter
+// https://github.com/elatisy/Typecho_WordsCounter
 function allOfCharacters() {
     $chars = 0;
     $db = Typecho_Db::get();
     $select = $db ->select('text')
                   ->from('table.contents')
                   ->where('table.contents.status = ?','publish');
-
     $rows = $db->fetchAll($select);
     foreach ($rows as $row){
         $chars += mb_strlen($row['text'], 'UTF-8');
     }
-
     $unit = '';
-    if($chars >= 10000) {
+    if ($chars >= 10000) {
         $chars /= 10000;
         $unit = 'W';
     } else if($chars >= 1000) {
         $chars /= 1000;
         $unit = 'K';
     }
-
     $out = sprintf('%.2lf%s',$chars, $unit);
-
     echo $out;
+}
+
+// 来自插件 IPLocation
+function showLocation($ip) {
+    require_once 'include/IP/IP.php';
+    $addresses = IP::find($ip);
+    $address = '';
+    if (!empty($addresses)) {
+        $addresses = array_unique($addresses);
+        $address = implode('', $addresses);
+        $address = str_replace('中国', '', $address);
+    }
+    echo $address;
+}
+
+// 来自插件 UserAgent
+function getUAImg($type, $name, $title) {
+    global $url_img;
+    $img = "<img nogallery class='icon-ua' src='" . $url_img . $type . $name . ".svg' title='" . $title . "' alt='" . $title . "' height=16px style='vertical-align:-2px;' />";
+    return $img;
+}
+
+function showUserAgent($ua) {
+    global $url_img;
+    $url_img = Helper::options()->themeUrl . '/include/UserAgent/img/';
+
+    /* OS */
+    require_once 'include/UserAgent/get_os.php';
+    $Os = get_os($ua);
+    $OsImg = getUAImg("os/", $Os['code'], $Os['title']);
+
+    /* Browser */
+    require_once 'include/UserAgent/get_browser_name.php';
+    $Browser = get_browser_name($ua);
+    $BrowserImg = getUAImg("browser/", $Browser['code'], $Browser['title']);
+
+    echo "&nbsp;&nbsp;" . $OsImg . "&nbsp;&nbsp;" . $BrowserImg;
 }
