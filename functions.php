@@ -222,5 +222,5 @@ function showUserAgent($ua) {
     $Browser = get_browser_name($ua);
     $BrowserImg = getUAImg("browser/", $Browser['code'], $Browser['title']);
 
-    echo "&nbsp;&nbsp;" . $OsImg . "&nbsp;&nbsp;" . $BrowserImg;
+    echo "&nbsp;" . $OsImg . "&nbsp;" . $BrowserImg;
 }

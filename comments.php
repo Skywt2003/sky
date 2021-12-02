@@ -80,8 +80,8 @@
     	<h2 id="response">添加新评论</h2>
     	<form method="post" action="<?php $this->commentUrl(); ?>" id="comment-form" role="form">
             <?php if ($this->user->hasLogin()): ?>
-		    <p>登录身份：?>
-		        <a href="<?php $this->options->profileUrl(); ?>"><?php $this->user->screenName(); ?></a> | <a href="<?php $this->options->logoutUrl(); ?>" title="Logout">退出 &raquo;</a>
+		    <p>登录身份：
+                <a href="<?php $this->options->profileUrl(); ?>"><?php $this->user->screenName(); ?></a> | <a href="<?php $this->options->logoutUrl(); ?>" title="Logout">退出 &raquo;</a>
    		    </p>
             <?php else: ?>
             <div class="form-group">
