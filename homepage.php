@@ -57,33 +57,28 @@ $this->need('functions.php'); // 不知道为啥，似乎模版页面不会自�
     <?php $this->header(); ?>
 </head>
 <!--[if lt IE 8]>
-    <?php _e('当前网页不支持你正在使用的浏览器。为了正常访问, 请升级你的浏览器！'); ?>
+    当前网页不支持你正在使用的浏览器。为了正常访问, 请升级你的浏览器！
 <![endif]-->
 <body>
 
 <?php if ($this->user->hasLogin()): ?>
-<nav class="container fixed-bottom p-2 navbar navbar-light">
+    <nav class="container fixed-bottom p-2 navbar navbar-light">
     <div>
         欢迎，<a href="<?php $this->options->profileUrl(); ?>"><?php $this->user->screenName(); ?></a>
-        <a class="badge badge-default ml-1 mr-1" href="<?php $this->options->siteUrl('admin'); ?>" title="Backstage">
-            <i class="fas fa-user-cog"></i>
-            <?php _e('网站后台'); ?>
-        </a>
         <a class="badge badge-default ml-1 mr-1" href="<?php $this->options->siteUrl('admin/manage-posts.php?status=draft'); ?>" title="Drafts">
-            <i class="far fa-edit"></i>
-            <?php _e('草稿箱'); ?>
+            <i class="far fa-edit"></i>草稿箱
+        </a>
+        <a class="badge badge-default ml-1 mr-1" href="<?php $this->options->siteUrl('admin'); ?>" title="Backstage">
+            <i class="fas fa-user-cog"></i>网站后台
         </a>
         <a class="badge badge-default ml-1 mr-1" href="<?php $this->options->siteUrl('admin/options-theme.php'); ?>" title="Settings">
-            <i class="far fa-cog"></i>
-            <?php _e('主题设置'); ?>
+            <i class="far fa-cog"></i>主题设置
         </a>
         <a class="badge badge-secondary ml-1 mr-1" href="#" onclick="javascript:location.reload();" title="Refresh">
-            <i class="fas fa-redo"></i>
-            <?php _e('刷新'); ?>
+            <i class="fas fa-redo"></i>刷新
         </a>
         <a class="badge badge-secondary ml-1 mr-1" href="<?php $this->options->logoutUrl(); ?>" title="Logout">
-            <i class="fas fa-sign-out-alt"></i>
-            <?php _e('退出'); ?>
+            <i class="fas fa-sign-out-alt"></i>退出
         </a>
     </div>
 </nav>
@@ -125,13 +120,13 @@ $this->need('functions.php'); // 不知道为啥，似乎模版页面不会自�
             <ul class="col navbar-nav justify-content-center pr-0">
                 <li class="nav-item">
                     <a class="nav-link nav-link-icon text-gray" href="<?php $this->options->siteUrl();?>">
-                        <i class="fa fa-home"></i> <?php _e('首页') ?>
+                        <i class="fa fa-home"></i> 首页
                     </a>
                 </li>
                 <?php if (strpos($this->options->frontPage, 'file') !== FALSE) {?>
                 <li class="nav-item">
                     <a class="nav-link nav-link-icon text-gray" href="<?php echo $this->options->siteUrl.$this->options->routingTable['archive']['url'] ?>">
-                        <i class="fa fa-book"></i> <?php _e('文章') ?>
+                        <i class="fa fa-book"></i> 文章
                     </a>
                 </li>
                 <?php } ?>

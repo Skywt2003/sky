@@ -33,12 +33,12 @@
                 <div class="d-inline-block ml-2">
                     <span class="font-weight-900"><?php $comments->author(); ?></span>
                     <?php if ($comments->authorId == $comments->ownerId): ?>
-                        <span class="badge badge-secondary ml-1 mr-1"><?php _e('博主') ?></span>
+                        <span class="badge badge-secondary ml-1 mr-1">博主</span>
                     <?php endif; ?>
                     <?php if ($comments->status == 'waiting'): ?>
                     <span class="badge badge-warning ml-1 mr-1">
                         <i class="fas fa-ellipsis-h"></i>
-                        <?php _e('等待审核') ?>
+                        等待审核
                     </span>
                     <?php endif; ?>
                     <?php showUserAgent($comments->agent); ?>
@@ -77,11 +77,11 @@
         <div>
             <?php $comments->cancelReply('<i class="fa fa-window-close"></i> 取消回复'); ?>
         </div>
-    	<h2 id="response"><?php _e('添加新评论'); ?></h2>
+    	<h2 id="response">添加新评论</h2>
     	<form method="post" action="<?php $this->commentUrl(); ?>" id="comment-form" role="form">
             <?php if ($this->user->hasLogin()): ?>
-		    <p><?php _e('登录身份: '); ?>
-		        <a href="<?php $this->options->profileUrl(); ?>"><?php $this->user->screenName(); ?></a> | <a href="<?php $this->options->logoutUrl(); ?>" title="Logout"><?php _e('退出'); ?> &raquo;</a>
+		    <p>登录身份：?>
+		        <a href="<?php $this->options->profileUrl(); ?>"><?php $this->user->screenName(); ?></a> | <a href="<?php $this->options->logoutUrl(); ?>" title="Logout">退出 &raquo;</a>
    		    </p>
             <?php else: ?>
             <div class="form-group">
@@ -101,7 +101,7 @@
                             <input type="checkbox" name="receiveMail" id="receiveMail" value="yes" checked />
                             <span class="custom-toggle-slider rounded-circle"></span>
                         </label>
-                        <label for="receiveMail" class="mb-0 ml-2"><?php _e('接收邮件通知'); ?></label>
+                        <label for="receiveMail" class="mb-0 ml-2">接收邮件通知</label>
                         </div>
                     </div>
                 </div>
