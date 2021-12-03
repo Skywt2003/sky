@@ -21,6 +21,9 @@ function themeConfig($form) {
     $notificationIcon = new Typecho_Widget_Helper_Form_Element_Text('notificationIcon', NULL, NULL, '网站公告图标', '显示在首页网站公告信息框前的 FontAwesome 图标代码，留空则不显示');
     $form->addInput($notificationIcon);
 
+    $oldPosts = new Typecho_Widget_Helper_Form_Element_Text('oldPosts', NULL, '365', '文章有效期', '单位：天。在此天数之前发布的文章将会显示「这是一篇旧文」的提示。留空则不显示');
+    $form->addInput($oldPosts);
+
     $commentsNotice = new Typecho_Widget_Helper_Form_Element_Text('commentsNotice', NULL, NULL, '评论区公告', '显示在评论区，留空则不显示');
     $form->addInput($commentsNotice);
 
@@ -30,15 +33,11 @@ function themeConfig($form) {
     $headerCode = new Typecho_Widget_Helper_Form_Element_Textarea('headerCode', NULL, NULL, '头部代码', '在头部添加的 HTML 代码，可以插入 JavsScript');
     $form->addInput($headerCode);
 
-    $footerCode = new Typecho_Widget_Helper_Form_Element_Textarea('footerCode', NULL, NULL, '页脚代码', '在页脚添加的 HTML 代码，可以插入 JavsScript代码');
+    $footerCode = new Typecho_Widget_Helper_Form_Element_Textarea('footerCode', NULL, NULL, '页脚代码', '在页脚添加的 HTML 代码，可以插入 JavsScript 代码');
     $form->addInput($footerCode);
 
-    $oldPosts = new Typecho_Widget_Helper_Form_Element_Radio('oldPosts',
-        array('able' => '启用',
-              'disable' => '禁用',
-        ),
-        'disable', '是否显示旧文提示', '启用则会在一年前发布的文章页面显示“这是一篇旧文”');
-    $form->addInput($oldPosts);
+    $cunstomCSS = new Typecho_Widget_Helper_Form_Element_Textarea('cunstomCSS', NULL, NULL, '自定义 CSS', '加入自定义的 CSS 代码');
+    $form->addInput($cunstomCSS);
 }
 
 function themeFields($layout) {

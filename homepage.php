@@ -53,6 +53,7 @@ $this->need('functions.php'); // 不知道为啥，似乎模版页面不会自�
     <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"> -->
 
     <?php $this->options->headerCode(); ?>
+    <style><?php $this->options->cutsomCSS(); ?></style>
 
     <?php $this->header(); ?>
 </head>

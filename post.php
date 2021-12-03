@@ -27,7 +27,7 @@
         </div>
         <hr>
         <?php $date1=date_create(date('c',$this->date->timeStamp)); $date2=date_create(date('c')); $days=date_diff($date1,$date2); ?>
-        <?php if ($this->options->oldPosts == 'able' && $days->format('%a') > 365): ?>
+        <?php if ($this->options->oldPosts != '' && $days->format('%a') > $this->options->oldPosts): ?>
         <div class="alert alert-primary alert-dismissible fade show shadow mb-5" role="alert">
             <span class="alert-inner--icon"><i class="fas fa-clock"></i></span>
             <span class="alert-inner--text">这是一篇发布于 <?php echo $days->format('%a'); ?> 天以前的旧文。其中的部分内容可能已经过时。</span>
