@@ -161,6 +161,9 @@ function exContent($content){
         $content = "<div id=\"tableOfContents\">{$toc_out}</div>". $content;
     }
 
+    // Fancybox 图片灯箱
+    $content = preg_replace("/<img src=\"([^\"]*)\" alt=\"([^\"]*)\" title=\"([^\"]*)\">/i", "<a data-fancybox=\"gallery\" href=\"\\1\" data-caption=\"\\3\"><img src=\"\\1\" alt=\"\\2\" title=\"\\3\"></a>", $content);
+
     return $content;
 }
 

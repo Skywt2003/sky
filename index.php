@@ -28,7 +28,9 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 	<?php while($this->next()): ?>
     <article class="mt-5 mb-5" itemscope itemtype="http://schema.org/BlogPosting">
         <?php if ($this->fields->headPic !=''): ?>
-            <img src=<?php $this->fields->headPic(); ?> class="img-fluid mx-auto d-block shadow rounded mb-3" alt="<?php $this->title(); ?>">
+            <a data-fancybox="gallery" href="<?php $this->fields->headPic(); ?>" data-caption="<?php $this->title(); ?>">
+                <img src=<?php $this->fields->headPic(); ?> class="img-fluid mx-auto d-block shadow rounded mb-3" alt="<?php $this->title(); ?>" title="<?php $this->title(); ?>">
+            </a>
         <?php endif; ?>
         <div>
             <h1 class="font-weight-bold post-title" itemprop="name headline">

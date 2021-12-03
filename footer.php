@@ -11,6 +11,17 @@
         $("article blockquote").addClass("shadow rounded");
         $("article pre").addClass("shadow rounded");
         $("table").addClass("table");
+        $(".aplayer").addClass("shadow");
+    });
+    /*
+     * Fancybox settings
+     * https://web.archive.org/web/20210325170940/https://fancyapps.com/fancybox/3/docs
+     */
+    $('[data-fancybox="gallery"]').fancybox({
+        buttons: ["zoom", "slideShow", "fullScreen", "download", "thumbs", "close"],
+        clickContent: function(current, event) {
+            return "close";
+        }
     });
 </script>
 

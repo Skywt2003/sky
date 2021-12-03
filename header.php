@@ -48,6 +48,10 @@
     <!-- KaTeX css via jsDelivr-->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
+    <!-- fancybox js&css via jsDelivr-->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
     <?php $this->options->headerCode(); ?>
 
     <?php $this->header(); ?>

@@ -8,7 +8,9 @@
 <div class="col mt-5" id="main" role="main">
     <article>
         <?php if ($this->fields->headPic !=''): ?>
-            <img src=<?php $this->fields->headPic(); ?> class="img-fluid mx-auto d-block shadow rounded mb-3" alt="<?php $this->title(); ?>">
+            <a data-fancybox="gallery" href="<?php $this->fields->headPic(); ?>" data-caption="<?php $this->title(); ?>">
+                <img src=<?php $this->fields->headPic(); ?> class="img-fluid mx-auto d-block shadow rounded mb-3" alt="<?php $this->title(); ?>" title="<?php $this->title(); ?>">
+            </a>
         <?php endif; ?> 
         <h1 class="font-weight-bold post-title"><?php $this->title() ?></h1>
         <div>
