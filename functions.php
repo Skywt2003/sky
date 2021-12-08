@@ -55,47 +55,8 @@ function themeFields($layout) {
 }
 
 function exContent($content){
-    // 短代码提示框，期望用数组的办法一次性实现，但是正则表达式太难了
-    // $alertIcons = array('primary' => 'fas fa-info-circle',
-    //                     'success' => 'fas fa-info-circle',
-    //                     'info' => 'fas fa-info-circle',
-    //                     'warning' => 'fa-exclamation-circle',
-    //                     'danger' => 'fas fa-skull-crossbones',
-    //                     'default' => 'fas fa-info-circle',
-    //                     'secondary' => 'fas fa-info-circle');
 
-    $pattern = '/\[(primary)\](.*?)\[\s*\/\1\s*\]/';
-    $replacement = '
-    <div class="alert alert-primary fade show shadow" role="alert">
-        <span class="alert-inner--icon"><i class="fas fa-info-circle"></i></span>
-        <span class="alert-inner--text">$2</span>
-    </div>';
-    $content = preg_replace($pattern, $replacement, $content);
-
-    $pattern = '/\[(default)\](.*?)\[\s*\/\1\s*\]/';
-    $replacement = '
-    <div class="alert alert-default fade show shadow" role="alert">
-        <span class="alert-inner--icon"><i class="fas fa-info-circle"></i></span>
-        <span class="alert-inner--text">$2</span>
-    </div>';
-    $content = preg_replace($pattern, $replacement, $content);
-
-    $pattern = '/\[(secondary)\](.*?)\[\s*\/\1\s*\]/';
-    $replacement = '
-    <div class="alert alert-secondary fade show shadow" role="alert">
-        <span class="alert-inner--icon text-default"><i class="fas fa-info-circle"></i></span>
-        <span class="alert-inner--text text-default">$2</span>
-    </div>';
-    $content = preg_replace($pattern, $replacement, $content);
-
-    $pattern = '/\[(success)\](.*?)\[\s*\/\1\s*\]/';
-    $replacement = '
-    <div class="alert alert-success fade show shadow" role="alert">
-        <span class="alert-inner--icon"><i class="fas fa-info-circle"></i></span>
-        <span class="alert-inner--text">$2</span>
-    </div>';
-    $content = preg_replace($pattern, $replacement, $content);
-
+    // 文章内短代码
     $pattern = '/\[(info)\](.*?)\[\s*\/\1\s*\]/';
     $replacement = '
     <div class="alert alert-info fade show shadow" role="alert">
@@ -120,24 +81,7 @@ function exContent($content){
     </div>';
     $content = preg_replace($pattern, $replacement, $content);
 
-    // $pattern = '/\[(alert-(.*?))\](.*?)\[\s*\/\1\s*\]/';
-    // $replacement = '
-    // <div class="alert alert-$2 fade show shadow" role="alert">
-    //     <span class="alert-inner--icon"><i class="$alertIcons[$2]"></i></span>
-    //     <span class="alert-inner--text">$3</span>
-    // </div>';
-    // $content = preg_replace($pattern, $replacement, $content);
-
-    // 正则表达式也太难了 。・゜・(ノД`)・゜・。
-    // $pattern = '/\[link (.*)\](.*)\[link\]/';
-    // $replacement = '
-    // <a class="btn btn-secondary" role="button" href="$1" target="_blank">$2</a>';
-    // $content = preg_replace($pattern, $replacement, $content);
-
     // 文章 TOC 功能
-    // [0]: 完整的匹配 <h2>conTent</h2>
-    // [1]: 匹配中的数字 2
-    // [2]: 匹配中的内容 conTent
     if (preg_match_all('/<h(\d)>(.*)<\/h\d>/isU', $content, $outarr)){
         $toc_out = "";
         $minlevel = 6;
