@@ -57,7 +57,7 @@
     });
 </script>
 
-<footer class="mt-5 mb-5" id="footer" role="footer">
+<footer class="mt-5 mb-5 animate__animated animate__fadeIn" id="footer" role="footer">
     <div class="container">
         <hr>
         <div class="text-center">

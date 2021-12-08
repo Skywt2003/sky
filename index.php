@@ -12,7 +12,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
     $this->need('header.php');
 ?>
 
-<div class="col mt-5" id="main" role="main">
+<div class="col mt-5 animate__animated animate__fadeIn" id="main" role="main">
     <?php if ($this->options->notification !='') { ?>
     <div class="alert alert-primary alert-dismissible fade show shadow" role="alert">
         <?php if ($this->options->notificationIcon != '') { ?>

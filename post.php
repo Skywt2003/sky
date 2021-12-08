@@ -5,7 +5,7 @@
     <script type='text/javascript'>window.location.href = '<?php echo $this->fields->linkTo ?>';</script>
 <?php endif; ?>
 
-<div class="col mt-5" id="main" role="main">
+<div class="col mt-5 animate__animated animate__fadeIn" id="main" role="main">
     <article>
         <?php if ($this->fields->headPic !=''): ?>
             <a data-fancybox="gallery" href="<?php $this->fields->headPic(); ?>" data-caption="<?php $this->title(); ?>">

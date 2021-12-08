@@ -5,7 +5,7 @@
     <script type='text/javascript'>window.location.href = '<?php echo $this->fields->linkTo ?>';</script>
 <?php endif; ?>
 
-<div class="col mt-5" id="main" role="main">
+<div class="col mt-5 animate__animated animate__fadeIn" id="main" role="main">
     <article>
         <h1 class="font-weight-bold post-title"><?php $this->title() ?></h1>
         <hr>

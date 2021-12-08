@@ -52,6 +52,9 @@ $this->need('functions.php'); // 不知道为啥，似乎模版页面不会自�
     <!-- KaTeX css via jsDelivr-->
     <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"> -->
 
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@latest/animate.min.css"/>
+
     <?php $this->options->headerCode(); ?>
     <style><?php $this->options->cutsomCSS(); ?></style>
 
@@ -85,7 +88,7 @@ $this->need('functions.php'); // 不知道为啥，似乎模版页面不会自�
 </nav>
 <?php endif; ?>
 
-<div class="flex-container">
+<div class="flex-container animate__animated animate__fadeIn">
     <header id="header" class="clearfix mb-4">
         <div class="container">
             <div class="row">
@@ -147,7 +150,7 @@ $this->need('functions.php'); // 不知道为啥，似乎模版页面不会自�
     </nav>
 </div>
 
-<footer class="mt-5 mb-5" id="footer" role="footer">
+<footer class="mt-5 mb-5 animate__animated animate__fadeIn" id="footer" role="footer">
     <div class="container">
         <hr>
         <div class="text-center">
