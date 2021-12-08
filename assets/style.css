@@ -12,6 +12,12 @@
     backdrop-filter: blur(20px);
     padding: 0;
 }
+
+/* 使导航栏视觉上居中 */
+.navbar ul.navbar-nav li:last-child{
+    margin-right: 0;
+}
+
 /* 底部网安备案图标调整 */
 #nis:before {
     content:url(beian.png);

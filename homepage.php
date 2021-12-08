@@ -146,7 +146,6 @@ $this->need('functions.php'); // 不知道为啥，似乎模版页面不会自�
         </div>
     </nav>
 </div>
-<script>$(document).ready(function(){$(".navbar ul.navbar-nav li:last-child").addClass("mr-0");});</script>
 
 <footer class="mt-5 mb-5" id="footer" role="footer">
     <div class="container">

@@ -153,7 +153,6 @@
         </ul>
     </div>
 </nav>
-<script>$(document).ready(function(){$(".navbar ul.navbar-nav li:last-child").addClass("mr-0");});</script>
 
 <div id="body">
     <div class="container">
