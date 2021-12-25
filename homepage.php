@@ -46,7 +46,7 @@ $this->need('functions.php'); // 不知道为啥，似乎模版页面不会自�
     <script>hljs.highlightAll();</script> -->
 
     <!-- Darkreader.js via jsDelivr -->
-    <script src="//cdn.jsdelivr.net/npm/darkreader@latest/darkreader.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/darkreader@4.9.40/darkreader.min.js"></script>
     <script>DarkReader.auto({brightness:100, contrast:90, sepia:10});</script>
     
     <!-- KaTeX css via jsDelivr-->
@@ -76,7 +76,7 @@ $this->need('functions.php'); // 不知道为啥，似乎模版页面不会自�
             <i class="fas fa-user-cog"></i>网站后台
         </a>
         <a class="badge badge-default ml-1 mr-1" href="<?php $this->options->siteUrl('admin/options-theme.php'); ?>" title="Settings">
-            <i class="far fa-cog"></i>主题设置
+            <i class="fas fa-cog"></i>主题设置
         </a>
         <a class="badge badge-secondary ml-1 mr-1" href="#" onclick="javascript:location.reload();" title="Refresh">
             <i class="fas fa-redo"></i>刷新
