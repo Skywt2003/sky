@@ -28,9 +28,9 @@
 <!-- lately.js -->
 <script>Lately({'target' : '.lately'});</script>
 
-<!-- KaTeX js via jsDelivr -->
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js"></script>
+<!-- KaTeX js -->
+<script src="<?php $this->options->themeUrl('/assets/js/plugins/katex/katex.min.js');?>"></script>
+<script src="<?php $this->options->themeUrl('/assets/js/plugins/katex/auto-render.min.js');?>"></script>
 <script>
     function triggerRenderingLaTeX(element) {
         renderMathInElement(
@@ -56,6 +56,25 @@
         }
     });
 </script>
+
+<div class="position-fixed d-flex" style="right:20px; bottom:30px; z-index:100; flex-direction:column">
+    <button type="button" class="btn btn-secondary btn-icon-only shadow mb-3" onclick="document.documentElement.scrollTo({top: 0, behavior: 'smooth'});">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <button type="button" class="btn btn-secondary btn-icon-only shadow mb-3" onclick="">
+        <i class="fas fa-search"></i>
+    </button>
+    <!-- <button type="button" class="btn btn-secondary btn-icon-only shadow mb-3" onclick="">
+        <i class="fas fa-qrcode"></i>
+    </button> -->
+    <!-- <button type="button" class="btn btn-secondary btn-icon-only shadow mb-3" onclick="">
+        <i class="fas fa-share-alt"></i>
+    </button> -->
+    <button type="button" class="btn btn-secondary btn-tooltip btn-icon-only shadow" onclick="if (DarkReader.isEnabled()) DarkReader.disable(); else DarkReader.enable({brightness: 100, contrast: 90, sepia: 10});"
+        data-toggle="tooltip" data-placement="left" title="✨ 你能听到星星的呼唤吗？" data-container="body" data-animation="true">
+        <i class="fas fa-moon"></i>
+    </button>
+</div>
 
 <footer class="mt-5 mb-5 animate__animated animate__fadeIn" id="footer" role="footer">
     <div class="container">
