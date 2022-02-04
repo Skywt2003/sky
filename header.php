@@ -128,15 +128,28 @@
             </div>
         </div>
         <ul class="col navbar-nav justify-content-center pr-0">
+            <?php if ($this->options->realHomepage){ ?>
+            <li class="nav-item">
+                <a class="nav-link nav-link-icon text-gray" href="<?php $this->options->realHomepage();?>">
+                    <i class="fa fa-home"></i> 首页
+                </a>
+            </li>
+            <?php } ?>
+            <?php if (strpos($this->options->frontPage, 'file') !== FALSE) {?>
             <li class="nav-item">
                 <a class="nav-link nav-link-icon <?php if ($this->is('index')){echo 'text-default';}else{echo 'text-gray';}?>" href="<?php $this->options->siteUrl();?>">
                     <i class="fa fa-home"></i> 首页
                 </a>
             </li>
-            <?php if (strpos($this->options->frontPage, 'file') !== FALSE) {?>
             <li class="nav-item">
                 <a class="nav-link nav-link-icon <?php if ($this->is('archive')){echo 'text-default';}else{echo 'text-gray';}?>" href="<?php echo $this->options->siteUrl.$this->options->routingTable['archive']['url'] ?>">
                     <i class="fa fa-book"></i> 文章
+                </a>
+            </li>
+            <?php } else {?>
+                <li class="nav-item">
+                <a class="nav-link nav-link-icon <?php if ($this->is('index')){echo 'text-default';}else{echo 'text-gray';}?>" href="<?php $this->options->siteUrl();?>">
+                    <i class="fa fa-book"></i> 博客
                 </a>
             </li>
             <?php } ?>

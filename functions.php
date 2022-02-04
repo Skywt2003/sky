@@ -9,6 +9,9 @@ function themeConfig($form) {
     $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', NULL, Helper::options()->themeUrl.'/assets/avatar.png', '站点 LOGO 地址', '在这里填入一个图片 URL 地址, 以在网站标题前加上一个 LOGO');
     $form->addInput($logoUrl);
     
+    $realHomepage = new Typecho_Widget_Helper_Form_Element_Text('realHomepage', NULL, NULL, '全站首页', '填入的链接会在导航栏首位显示为「首页」');
+    $form->addInput($realHomepage);
+
     $icpInfo = new Typecho_Widget_Helper_Form_Element_Text('icpInfo', NULL, NULL, 'ICP 备案号', '显示在底部，留空则不显示');
     $form->addInput($icpInfo->addRule('xssCheck', '请不要使用特殊字符'));
 
