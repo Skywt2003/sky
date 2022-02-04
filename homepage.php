@@ -23,6 +23,9 @@ $this->need('functions.php'); // 不知道为啥，似乎模版页面不会自�
     <!-- FontAwesome Icons -->
     <link type="text/css" href="<?php $this->options->themeUrl('/assets/css/fa-all.min.css')?>" rel="stylesheet">
 
+	<!-- Google Fonts -->
+	<link href="https://fonts.loli.net/css2?family=Noto+Serif+SC:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet"> 
+
     <!-- JS: jQuery & popper & bootstrap -->
     <script src="<?php $this->options->themeUrl('/assets/js/core/jquery.min.js');?>"></script>
     <script src="<?php $this->options->themeUrl('/assets/js/core/popper.min.js');?>"></script>

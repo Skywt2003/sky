@@ -1,3 +1,7 @@
+body, .navbar-nav .nav-link {
+    font-family: 'Noto Serif SC', serif;
+}
+
 .container {
     max-width: 820px;
 }
@@ -55,7 +59,6 @@ blockquote:before {
     line-height: 0;
 }
 code, pre {
-    font-family: Consolas,Menlo,Monaco,Andale Mono WT,Andale Mono,Lucida Console,Lucida Sans Typewriter,DejaVu Sans Mono,Bitstream Vera Sans Mono,Liberation Mono,Nimbus Mono L,Courier New,Courier,monospace;
     background: #f0f0f0;
     color: #444;
 }
