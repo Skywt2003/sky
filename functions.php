@@ -142,7 +142,9 @@ function showLocation($ip) {
     require_once 'include/IP/IP.php';
     $addresses = IP::find($ip);
     $address = '';
-    if (!empty($addresses)) {
+    if ($addresses==='N/A'){
+        $address = 'IPv6';
+    } else if (!empty($addresses)) {
         $addresses = array_unique($addresses);
         $address = implode('', $addresses);
         $address = str_replace('中国', '', $address);
