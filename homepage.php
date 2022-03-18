@@ -75,19 +75,19 @@ $this->need('functions.php'); // 不知道为啥，似乎模版页面不会自�
     <div>
         欢迎，<a href="<?php $this->options->profileUrl(); ?>"><?php $this->user->screenName(); ?></a>
         <a class="badge badge-default ml-1 mr-1" href="<?php $this->options->siteUrl('admin/manage-posts.php?status=draft'); ?>" title="Drafts">
-            <i class="far fa-edit"></i>草稿箱
+            <i class="far fa-edit"></i> 草稿箱
         </a>
         <a class="badge badge-default ml-1 mr-1" href="<?php $this->options->siteUrl('admin'); ?>" title="Backstage">
-            <i class="fas fa-user-cog"></i>网站后台
+            <i class="fas fa-user-cog"></i> 网站后台
         </a>
         <a class="badge badge-default ml-1 mr-1" href="<?php $this->options->siteUrl('admin/options-theme.php'); ?>" title="Settings">
-            <i class="fas fa-cog"></i>主题设置
+            <i class="fas fa-cog"></i> 主题设置
         </a>
         <a class="badge badge-secondary ml-1 mr-1" href="#" onclick="javascript:location.reload();" title="Refresh">
-            <i class="fas fa-redo"></i>刷新
+            <i class="fas fa-redo"></i> 刷新
         </a>
         <a class="badge badge-secondary ml-1 mr-1" href="<?php $this->options->logoutUrl(); ?>" title="Logout">
-            <i class="fas fa-sign-out-alt"></i>退出
+            <i class="fas fa-sign-out-alt"></i> 退出
         </a>
     </div>
 </nav>
@@ -129,14 +129,12 @@ $this->need('functions.php'); // 不知道为啥，似乎模版页面不会自�
             <ul class="col navbar-nav justify-content-center pr-0">
                 <li class="nav-item">
                     <a class="nav-link nav-link-icon text-gray" href="<?php $this->options->siteUrl();?>">
-                        <i class="fa fa-home"></i> 首页
-                    </a>
+                        <i class="fa fa-home"></i> 首页 </a>
                 </li>
                 <?php if (strpos($this->options->frontPage, 'file') !== FALSE) {?>
                 <li class="nav-item">
                     <a class="nav-link nav-link-icon text-gray" href="<?php echo $this->options->siteUrl.$this->options->routingTable['archive']['url'] ?>">
-                        <i class="fa fa-book"></i> 文章
-                    </a>
+                        <i class="fa fa-book"></i> 文章 </a>
                 </li>
                 <?php } ?>
                 <?php $this->widget('Widget_Contents_Page_List')->to($pagelist);
@@ -146,8 +144,7 @@ $this->need('functions.php'); // 不知道为啥，似乎模版页面不会自�
                         <?php if ($pagelist->fields->pageIcon != '') {?>
                         <i class="<?php echo $pagelist->fields->pageIcon ?>"></i>
                         <?php } ?>
-                    <?php echo $pagelist->title ?>
-                    </a>
+                    <?php echo $pagelist->title ?> </a>
                 </li>
                 <?php endwhile;?>
             </ul>
